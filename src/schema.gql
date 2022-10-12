@@ -1,0 +1,5363 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type experience {
+  growth_rate_id: Int!
+  level: Int!
+  experience: Int!
+  growth_rates: growth_rates!
+}
+
+type ability_flavor_text {
+  ability_id: Int!
+  version_group_id: Int!
+  language_id: Int!
+  flavor_text: String!
+  languages: languages!
+  version_groups: version_groups!
+  abilities: abilities!
+}
+
+type ability_names {
+  ability_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  abilities: abilities!
+}
+
+type ability_prose {
+  ability_id: Int!
+  local_language_id: Int!
+  effect: String
+  short_effect: String
+  languages: languages!
+  abilities: abilities!
+}
+
+type encounter_method_prose {
+  encounter_method_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  encounter_methods: encounter_methods!
+}
+
+type item_fling_effect_prose {
+  item_fling_effect_id: Int!
+  local_language_id: Int!
+  effect: String!
+  languages: languages!
+  item_fling_effects: item_fling_effects!
+}
+
+type Item_fling_effectsCount {
+  item_fling_effect_prose: Int!
+  items: Int!
+}
+
+type item_fling_effects {
+  id: ID!
+  item_fling_effect_prose: [item_fling_effect_prose!]
+  items: [items!]
+  _count: Item_fling_effectsCount!
+}
+
+type item_pocket_names {
+  item_pocket_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  item_pockets: item_pockets!
+}
+
+type Item_pocketsCount {
+  item_categories: Int!
+  item_pocket_names: Int!
+}
+
+type item_pockets {
+  id: ID!
+  identifier: String!
+  item_categories: [item_categories!]
+  item_pocket_names: [item_pocket_names!]
+  _count: Item_pocketsCount!
+}
+
+type item_category_prose {
+  item_category_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  item_categories: item_categories!
+}
+
+type Item_categoriesCount {
+  item_category_prose: Int!
+  items: Int!
+}
+
+type item_categories {
+  id: ID!
+  pocket_id: Int!
+  identifier: String!
+  item_pockets: item_pockets!
+  item_category_prose: [item_category_prose!]
+  items: [items!]
+  _count: Item_categoriesCount!
+}
+
+type move_damage_class_prose {
+  move_damage_class_id: Int!
+  local_language_id: Int!
+  name: String
+  description: String
+  languages: languages!
+  move_damage_classes: move_damage_classes!
+}
+
+type super_contest_effect_prose {
+  super_contest_effect_id: Int!
+  local_language_id: Int!
+  flavor_text: String!
+  languages: languages!
+  super_contest_effects: super_contest_effects!
+}
+
+type Super_contest_effectsCount {
+  moves: Int!
+  super_contest_effect_prose: Int!
+}
+
+type super_contest_effects {
+  id: ID!
+  moves: [moves!]
+  super_contest_effect_prose: [super_contest_effect_prose!]
+  _count: Super_contest_effectsCount!
+}
+
+type contest_effect_prose {
+  contest_effect_id: Int!
+  local_language_id: Int!
+  flavor_text: String
+  effect: String
+  languages: languages!
+  contest_effects: contest_effects!
+}
+
+type Contest_effectsCount {
+  contest_effect_prose: Int!
+  moves: Int!
+}
+
+type contest_effects {
+  id: ID!
+  contest_effect_prose: [contest_effect_prose!]
+  moves: [moves!]
+  _count: Contest_effectsCount!
+}
+
+type berry_flavors {
+  berry_id: Int!
+  contest_type_id: Int!
+  flavor: Int!
+  contest_types: contest_types!
+  berries: berries!
+}
+
+type contest_type_names {
+  contest_type_id: Int!
+  local_language_id: Int!
+  name: String
+  flavor: String
+  color: String
+  languages: languages!
+  contest_types: contest_types!
+}
+
+type move_meta_stat_changes {
+  move_id: Int!
+  stat_id: Int!
+  change: Int!
+  stats: stats!
+  moves: moves!
+}
+
+type pokemon_stats {
+  base_stat: Int!
+  effort: Int!
+  stats: stats!
+  pokemon: pokemon!
+}
+
+type stat_hint_names {
+  stat_hint_id: Int!
+  local_language_id: Int!
+  message: String!
+  languages: languages!
+  stat_hints: stat_hints!
+}
+
+type Stat_hintsCount {
+  stat_hint_names: Int!
+}
+
+type stat_hints {
+  id: ID!
+  stat_id: Int!
+  gene_mod_5: Int!
+  stats: stats!
+  stat_hint_names: [stat_hint_names!]
+  _count: Stat_hintsCount!
+}
+
+type stat_names {
+  stat_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  stats: stats!
+}
+
+type StatsCount {
+  move_meta_stat_changes: Int!
+  natures_natures_increased_stat_idTostats: Int!
+  natures_natures_decreased_stat_idTostats: Int!
+  pokemon_stats: Int!
+  stat_hints: Int!
+  stat_names: Int!
+}
+
+type stats {
+  id: ID!
+  damage_class_id: Int
+  identifier: String!
+  is_battle_only: Boolean!
+  move_damage_classes: move_damage_classes
+  move_meta_stat_changes: [move_meta_stat_changes!]
+  natures_natures_increased_stat_idTostats: [natures!]
+  natures_natures_decreased_stat_idTostats: [natures!]
+  pokemon_stats: [pokemon_stats!]
+  stat_hints: [stat_hints!]
+  stat_names: [stat_names!]
+  _count: StatsCount!
+}
+
+type move_battle_style_prose {
+  move_battle_style_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  move_battle_styles: move_battle_styles!
+}
+
+type Move_battle_stylesCount {
+  move_battle_style_prose: Int!
+  nature_battle_style_preferences: Int!
+}
+
+type move_battle_styles {
+  id: ID!
+  identifier: String!
+  move_battle_style_prose: [move_battle_style_prose!]
+  nature_battle_style_preferences: [nature_battle_style_preferences!]
+  _count: Move_battle_stylesCount!
+}
+
+type nature_battle_style_preferences {
+  nature_id: Int!
+  move_battle_style_id: Int!
+  low_hp_preference: Int!
+  high_hp_preference: Int!
+  move_battle_styles: move_battle_styles!
+  natures: natures!
+}
+
+type nature_names {
+  nature_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  natures: natures!
+}
+
+type pokeathlon_stat_names {
+  pokeathlon_stat_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  pokeathlon_stats: pokeathlon_stats!
+}
+
+type pokemon_form_names {
+  pokemon_form_id: Int!
+  local_language_id: Int!
+  form_name: String
+  pokemon_name: String
+  languages: languages!
+  pokemon_forms: pokemon_forms!
+}
+
+type Pokemon_formsCount {
+  pokemon_form_names: Int!
+  pokemon_form_pokeathlon_stats: Int!
+}
+
+type pokemon_forms {
+  id: ID!
+  form_identifier: String
+  pokemon_id: Int!
+  introduced_in_version_group_id: Int
+  is_default: Boolean!
+  is_battle_only: Boolean!
+  order: Int!
+  version_groups: version_groups
+  pokemon: pokemon!
+  pokemon_form_names: [pokemon_form_names!]
+  pokemon_form_pokeathlon_stats: [pokemon_form_pokeathlon_stats!]
+  _count: Pokemon_formsCount!
+}
+
+type pokemon_form_pokeathlon_stats {
+  pokemon_form_id: Int!
+  pokeathlon_stat_id: Int!
+  minimum_stat: Int!
+  base_stat: Int!
+  maximum_stat: Int!
+  pokeathlon_stats: pokeathlon_stats!
+  pokemon_forms: pokemon_forms!
+}
+
+type Pokeathlon_statsCount {
+  nature_pokeathlon_stats: Int!
+  pokeathlon_stat_names: Int!
+  pokemon_form_pokeathlon_stats: Int!
+}
+
+type pokeathlon_stats {
+  id: ID!
+  identifier: String!
+  nature_pokeathlon_stats: [nature_pokeathlon_stats!]
+  pokeathlon_stat_names: [pokeathlon_stat_names!]
+  pokemon_form_pokeathlon_stats: [pokemon_form_pokeathlon_stats!]
+  _count: Pokeathlon_statsCount!
+}
+
+type nature_pokeathlon_stats {
+  nature_id: Int!
+  pokeathlon_stat_id: Int!
+  max_change: Int!
+  pokeathlon_stats: pokeathlon_stats!
+  natures: natures!
+}
+
+type NaturesCount {
+  nature_battle_style_preferences: Int!
+  nature_names: Int!
+  nature_pokeathlon_stats: Int!
+}
+
+type natures {
+  id: ID!
+  identifier: String!
+  decreased_stat_id: Int!
+  increased_stat_id: Int!
+  hates_flavor_id: Int!
+  likes_flavor_id: Int!
+  contest_types_contest_typesTonatures_likes_flavor_id: contest_types!
+  contest_types_contest_typesTonatures_hates_flavor_id: contest_types!
+  stats_natures_increased_stat_idTostats: stats!
+  stats_natures_decreased_stat_idTostats: stats!
+  nature_battle_style_preferences: [nature_battle_style_preferences!]
+  nature_names: [nature_names!]
+  nature_pokeathlon_stats: [nature_pokeathlon_stats!]
+  _count: NaturesCount!
+}
+
+type Contest_typesCount {
+  berry_flavors: Int!
+  contest_type_names: Int!
+  moves: Int!
+  natures_contest_typesTonatures_likes_flavor_id: Int!
+  natures_contest_typesTonatures_hates_flavor_id: Int!
+}
+
+type contest_types {
+  id: ID!
+  identifier: String!
+  berry_flavors: [berry_flavors!]
+  contest_type_names: [contest_type_names!]
+  moves: [moves!]
+  natures_contest_typesTonatures_likes_flavor_id: [natures!]
+  natures_contest_typesTonatures_hates_flavor_id: [natures!]
+  _count: Contest_typesCount!
+}
+
+type move_changelog {
+  move_id: Int!
+  changed_in_version_group_id: Int!
+  type_id: Int
+  effect_id: Int
+  effect_chance: Int
+  move_effects: move_effects
+  types: types
+  version_groups: version_groups!
+  moves: moves!
+}
+
+type move_effect_changelog_prose {
+  move_effect_changelog_id: Int!
+  local_language_id: Int!
+  effect: String!
+  languages: languages!
+  move_effect_changelog: move_effect_changelog!
+}
+
+type Move_effect_changelogCount {
+  move_effect_changelog_prose: Int!
+}
+
+type move_effect_changelog {
+  id: ID!
+  effect_id: Int!
+  changed_in_version_group_id: Int!
+  version_groups: version_groups!
+  move_effects: move_effects!
+  move_effect_changelog_prose: [move_effect_changelog_prose!]
+  _count: Move_effect_changelogCount!
+}
+
+type move_effect_prose {
+  move_effect_id: Int!
+  local_language_id: Int!
+  short_effect: String
+  effect: String
+  languages: languages!
+  move_effects: move_effects!
+}
+
+type Move_effectsCount {
+  move_changelog: Int!
+  move_effect_changelog: Int!
+  move_effect_prose: Int!
+  moves: Int!
+}
+
+type move_effects {
+  id: ID!
+  move_changelog: [move_changelog!]
+  move_effect_changelog: [move_effect_changelog!]
+  move_effect_prose: [move_effect_prose!]
+  moves: [moves!]
+  _count: Move_effectsCount!
+}
+
+type move_target_prose {
+  move_target_id: Int!
+  local_language_id: Int!
+  name: String
+  description: String
+  languages: languages!
+  move_targets: move_targets!
+}
+
+type Move_targetsCount {
+  move_target_prose: Int!
+  moves: Int!
+}
+
+type move_targets {
+  id: ID!
+  identifier: String!
+  move_target_prose: [move_target_prose!]
+  moves: [moves!]
+  _count: Move_targetsCount!
+}
+
+type contest_combos {
+  first_move_id: Int!
+  second_move_id: Int!
+  moves_contest_combos_second_move_idTomoves: moves!
+  moves_contest_combos_first_move_idTomoves: moves!
+}
+
+type machines {
+  machine_number: Int!
+  version_group_id: Int!
+  item_id: Int!
+  move_id: Int!
+  moves: moves!
+  items: items!
+  version_groups: version_groups!
+}
+
+type move_flag_prose {
+  move_flag_id: Int!
+  local_language_id: Int!
+  name: String
+  description: String
+  languages: languages!
+  move_flags: move_flags!
+}
+
+type Move_flagsCount {
+  move_flag_map: Int!
+  move_flag_prose: Int!
+}
+
+type move_flags {
+  id: ID!
+  identifier: String!
+  move_flag_map: [move_flag_map!]
+  move_flag_prose: [move_flag_prose!]
+  _count: Move_flagsCount!
+}
+
+type move_flag_map {
+  move_id: Int!
+  move_flag_id: Int!
+  move_flags: move_flags!
+  moves: moves!
+}
+
+type move_flavor_summaries {
+  move_id: Int!
+  local_language_id: Int!
+  flavor_summary: String
+  languages: languages!
+  moves: moves!
+}
+
+type move_flavor_text {
+  move_id: Int!
+  version_group_id: Int!
+  language_id: Int!
+  flavor_text: String!
+  languages: languages!
+  version_groups: version_groups!
+  moves: moves!
+}
+
+type move_meta_ailment_names {
+  move_meta_ailment_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  move_meta_ailments: move_meta_ailments!
+}
+
+type Move_meta_ailmentsCount {
+  move_meta: Int!
+  move_meta_ailment_names: Int!
+}
+
+type move_meta_ailments {
+  id: ID!
+  identifier: String!
+  move_meta: [move_meta!]
+  move_meta_ailment_names: [move_meta_ailment_names!]
+  _count: Move_meta_ailmentsCount!
+}
+
+type move_meta_category_prose {
+  move_meta_category_id: Int!
+  local_language_id: Int!
+  description: String!
+  languages: languages!
+  move_meta_categories: move_meta_categories!
+}
+
+type Move_meta_categoriesCount {
+  move_meta: Int!
+  move_meta_category_prose: Int!
+}
+
+type move_meta_categories {
+  id: ID!
+  identifier: String!
+  move_meta: [move_meta!]
+  move_meta_category_prose: [move_meta_category_prose!]
+  _count: Move_meta_categoriesCount!
+}
+
+type move_meta {
+  move_id: ID!
+  meta_category_id: Int!
+  meta_ailment_id: Int!
+  min_hits: Int
+  max_hits: Int
+  min_turns: Int
+  max_turns: Int
+  recoil: Int!
+  healing: Int!
+  crit_rate: Int!
+  ailment_chance: Int!
+  flinch_chance: Int!
+  stat_chance: Int!
+  move_meta_ailments: move_meta_ailments!
+  move_meta_categories: move_meta_categories!
+  moves: moves!
+}
+
+type move_names {
+  move_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  moves: moves!
+}
+
+type location_area_prose {
+  location_area_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  location_areas: location_areas!
+}
+
+type Location_areasCount {
+  encounters: Int!
+  location_area_encounter_rates: Int!
+  location_area_prose: Int!
+}
+
+type location_areas {
+  id: ID!
+  location_id: Int!
+  game_index: Int!
+  identifier: String
+  locations: locations!
+  encounters: [encounters!]
+  location_area_encounter_rates: [location_area_encounter_rates!]
+  location_area_prose: [location_area_prose!]
+  _count: Location_areasCount!
+}
+
+type location_game_indices {
+  location_id: Int!
+  generation_id: Int!
+  game_index: Int!
+  generations: generations!
+  locations: locations!
+}
+
+type location_names {
+  location_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  locations: locations!
+}
+
+type LocationsCount {
+  location_areas: Int!
+  location_game_indices: Int!
+  location_names: Int!
+  pokemon_evolution: Int!
+}
+
+type locations {
+  id: ID!
+  region_id: Int
+  identifier: String!
+  regions: regions
+  location_areas: [location_areas!]
+  location_game_indices: [location_game_indices!]
+  location_names: [location_names!]
+  pokemon_evolution: [pokemon_evolution!]
+  _count: LocationsCount!
+}
+
+type evolution_trigger_prose {
+  evolution_trigger_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  evolution_triggers: evolution_triggers!
+}
+
+type Evolution_triggersCount {
+  evolution_trigger_prose: Int!
+  pokemon_evolution: Int!
+}
+
+type evolution_triggers {
+  id: ID!
+  identifier: String!
+  evolution_trigger_prose: [evolution_trigger_prose!]
+  pokemon_evolution: [pokemon_evolution!]
+  _count: Evolution_triggersCount!
+}
+
+type pokemon_evolution {
+  id: ID!
+  evolved_species_id: Int!
+  evolution_trigger_id: Int!
+  trigger_item_id: Int
+  minimum_level: Int
+  gender: String
+  location_id: Int
+  held_item_id: Int
+  time_of_day: String
+  known_move_id: Int
+  minimum_happiness: Int
+  minimum_beauty: Int
+  relative_physical_stats: Int
+  party_species_id: Int
+  trade_species_id: Int
+  pokemon_species_pokemon_evolution_trade_species_idTopokemon_species: pokemon_species
+  pokemon_species_pokemon_evolution_party_species_idTopokemon_species: pokemon_species
+  moves: moves
+  items_itemsTopokemon_evolution_held_item_id: items
+  locations: locations
+  items_itemsTopokemon_evolution_trigger_item_id: items
+  evolution_triggers: evolution_triggers!
+  pokemon_species_pokemon_evolution_evolved_species_idTopokemon_species: pokemon_species!
+}
+
+type super_contest_combos {
+  first_move_id: Int!
+  second_move_id: Int!
+  moves_movesTosuper_contest_combos_second_move_id: moves!
+  moves_movesTosuper_contest_combos_first_move_id: moves!
+}
+
+type MovesCount {
+  contest_combos_contest_combos_second_move_idTomoves: Int!
+  contest_combos_contest_combos_first_move_idTomoves: Int!
+  machines: Int!
+  move_changelog: Int!
+  move_flag_map: Int!
+  move_flavor_summaries: Int!
+  move_flavor_text: Int!
+  move_meta_stat_changes: Int!
+  move_names: Int!
+  pokemon_evolution: Int!
+  super_contest_combos_movesTosuper_contest_combos_second_move_id: Int!
+  super_contest_combos_movesTosuper_contest_combos_first_move_id: Int!
+}
+
+type moves {
+  id: ID!
+  identifier: String!
+  generation_id: Int!
+  type_id: Int!
+  target_id: Int!
+  damage_class_id: Int!
+  effect_id: Int!
+  effect_chance: Int
+  contest_type_id: Int
+  contest_effect_id: Int
+  super_contest_effect_id: Int
+  super_contest_effects: super_contest_effects
+  contest_effects: contest_effects
+  contest_types: contest_types
+  move_effects: move_effects!
+  move_damage_classes: move_damage_classes!
+  move_targets: move_targets!
+  types: types!
+  generations: generations!
+  contest_combos_contest_combos_second_move_idTomoves: [contest_combos!]
+  contest_combos_contest_combos_first_move_idTomoves: [contest_combos!]
+  machines: [machines!]
+  move_changelog: [move_changelog!]
+  move_flag_map: [move_flag_map!]
+  move_flavor_summaries: [move_flavor_summaries!]
+  move_flavor_text: [move_flavor_text!]
+  move_meta: move_meta
+  move_meta_stat_changes: [move_meta_stat_changes!]
+  move_names: [move_names!]
+  pokemon_evolution: [pokemon_evolution!]
+  super_contest_combos_movesTosuper_contest_combos_second_move_id: [super_contest_combos!]
+  super_contest_combos_movesTosuper_contest_combos_first_move_id: [super_contest_combos!]
+  _count: MovesCount!
+}
+
+type Move_damage_classesCount {
+  move_damage_class_prose: Int!
+  moves: Int!
+  stats: Int!
+  types: Int!
+}
+
+type move_damage_classes {
+  id: ID!
+  identifier: String!
+  move_damage_class_prose: [move_damage_class_prose!]
+  moves: [moves!]
+  stats: [stats!]
+  types: [types!]
+  _count: Move_damage_classesCount!
+}
+
+type pokemon_types {
+  slot: Int!
+  types: types!
+  pokemon: pokemon!
+}
+
+type type_efficacy {
+  damage_type_id: Int!
+  target_type_id: Int!
+  damage_factor: Int!
+  types_type_efficacy_target_type_idTotypes: types!
+  types_type_efficacy_damage_type_idTotypes: types!
+}
+
+type type_names {
+  type_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  types: types!
+}
+
+type TypesCount {
+  berries: Int!
+  move_changelog: Int!
+  moves: Int!
+  pokemon_types: Int!
+  type_efficacy_type_efficacy_target_type_idTotypes: Int!
+  type_efficacy_type_efficacy_damage_type_idTotypes: Int!
+  type_names: Int!
+}
+
+type types {
+  id: ID!
+  identifier: String!
+  generation_id: Int!
+  damage_class_id: Int
+  move_damage_classes: move_damage_classes
+  generations: generations!
+  berries: [berries!]
+  move_changelog: [move_changelog!]
+  moves(where: movesWhereInput, orderBy: [movesOrderByWithRelationInput!], cursor: movesWhereUniqueInput, take: Int, skip: Int, distinct: [MovesScalarFieldEnum!]): [moves!]
+  pokemon_types: [pokemon_types!]
+  type_efficacy_type_efficacy_target_type_idTotypes: [type_efficacy!]
+  type_efficacy_type_efficacy_damage_type_idTotypes: [type_efficacy!]
+  type_names: [type_names!]
+  _count: TypesCount!
+}
+
+input movesWhereInput {
+  AND: [movesWhereInput!]
+  OR: [movesWhereInput!]
+  NOT: [movesWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  generation_id: IntFilter
+  type_id: IntFilter
+  target_id: IntFilter
+  damage_class_id: IntFilter
+  effect_id: IntFilter
+  effect_chance: IntNullableFilter
+  contest_type_id: IntNullableFilter
+  contest_effect_id: IntNullableFilter
+  super_contest_effect_id: IntNullableFilter
+  super_contest_effects: Super_contest_effectsRelationFilter
+  contest_effects: Contest_effectsRelationFilter
+  contest_types: Contest_typesRelationFilter
+  move_effects: Move_effectsRelationFilter
+  move_damage_classes: Move_damage_classesRelationFilter
+  move_targets: Move_targetsRelationFilter
+  types: TypesRelationFilter
+  generations: GenerationsRelationFilter
+  contest_combos_contest_combos_second_move_idTomoves: Contest_combosListRelationFilter
+  contest_combos_contest_combos_first_move_idTomoves: Contest_combosListRelationFilter
+  machines: MachinesListRelationFilter
+  move_changelog: Move_changelogListRelationFilter
+  move_flag_map: Move_flag_mapListRelationFilter
+  move_flavor_summaries: Move_flavor_summariesListRelationFilter
+  move_flavor_text: Move_flavor_textListRelationFilter
+  move_meta: Move_metaRelationFilter
+  move_meta_stat_changes: Move_meta_stat_changesListRelationFilter
+  move_names: Move_namesListRelationFilter
+  pokemon_evolution: Pokemon_evolutionListRelationFilter
+  super_contest_combos_movesTosuper_contest_combos_second_move_id: Super_contest_combosListRelationFilter
+  super_contest_combos_movesTosuper_contest_combos_first_move_id: Super_contest_combosListRelationFilter
+}
+
+input IntFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntFilter
+}
+
+input NestedIntFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntFilter
+}
+
+input StringFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringFilter
+}
+
+input NestedStringFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringFilter
+}
+
+input IntNullableFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntNullableFilter
+}
+
+input NestedIntNullableFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntNullableFilter
+}
+
+input Super_contest_effectsRelationFilter {
+  is: super_contest_effectsWhereInput
+  isNot: super_contest_effectsWhereInput
+}
+
+input super_contest_effectsWhereInput {
+  AND: [super_contest_effectsWhereInput!]
+  OR: [super_contest_effectsWhereInput!]
+  NOT: [super_contest_effectsWhereInput!]
+  id: IntFilter
+  moves: MovesListRelationFilter
+  super_contest_effect_prose: Super_contest_effect_proseListRelationFilter
+}
+
+input MovesListRelationFilter {
+  every: movesWhereInput
+  some: movesWhereInput
+  none: movesWhereInput
+}
+
+input Super_contest_effect_proseListRelationFilter {
+  every: super_contest_effect_proseWhereInput
+  some: super_contest_effect_proseWhereInput
+  none: super_contest_effect_proseWhereInput
+}
+
+input super_contest_effect_proseWhereInput {
+  AND: [super_contest_effect_proseWhereInput!]
+  OR: [super_contest_effect_proseWhereInput!]
+  NOT: [super_contest_effect_proseWhereInput!]
+  super_contest_effect_id: IntFilter
+  local_language_id: IntFilter
+  flavor_text: StringFilter
+  languages: LanguagesRelationFilter
+  super_contest_effects: Super_contest_effectsRelationFilter
+}
+
+input LanguagesRelationFilter {
+  is: languagesWhereInput
+  isNot: languagesWhereInput
+}
+
+input languagesWhereInput {
+  AND: [languagesWhereInput!]
+  OR: [languagesWhereInput!]
+  NOT: [languagesWhereInput!]
+  id: IntFilter
+  iso639: StringFilter
+  iso3166: StringFilter
+  identifier: StringFilter
+  official: BoolFilter
+  order: IntNullableFilter
+  ability_changelog_prose: Ability_changelog_proseListRelationFilter
+  ability_flavor_text: Ability_flavor_textListRelationFilter
+  ability_names: Ability_namesListRelationFilter
+  ability_prose: Ability_proseListRelationFilter
+  berry_firmness_names: Berry_firmness_namesListRelationFilter
+  contest_effect_prose: Contest_effect_proseListRelationFilter
+  contest_type_names: Contest_type_namesListRelationFilter
+  egg_group_prose: Egg_group_proseListRelationFilter
+  encounter_condition_prose: Encounter_condition_proseListRelationFilter
+  encounter_condition_value_prose: Encounter_condition_value_proseListRelationFilter
+  encounter_method_prose: Encounter_method_proseListRelationFilter
+  evolution_trigger_prose: Evolution_trigger_proseListRelationFilter
+  generation_names: Generation_namesListRelationFilter
+  growth_rate_prose: Growth_rate_proseListRelationFilter
+  item_category_prose: Item_category_proseListRelationFilter
+  item_flag_prose: Item_flag_proseListRelationFilter
+  item_flavor_summaries: Item_flavor_summariesListRelationFilter
+  item_flavor_text: Item_flavor_textListRelationFilter
+  item_fling_effect_prose: Item_fling_effect_proseListRelationFilter
+  item_names: Item_namesListRelationFilter
+  item_pocket_names: Item_pocket_namesListRelationFilter
+  item_prose: Item_proseListRelationFilter
+  language_names_language_names_local_language_idTolanguages: Language_namesListRelationFilter
+  language_names_language_names_language_idTolanguages: Language_namesListRelationFilter
+  location_area_prose: Location_area_proseListRelationFilter
+  location_names: Location_namesListRelationFilter
+  move_battle_style_prose: Move_battle_style_proseListRelationFilter
+  move_damage_class_prose: Move_damage_class_proseListRelationFilter
+  move_effect_changelog_prose: Move_effect_changelog_proseListRelationFilter
+  move_effect_prose: Move_effect_proseListRelationFilter
+  move_flag_prose: Move_flag_proseListRelationFilter
+  move_flavor_summaries: Move_flavor_summariesListRelationFilter
+  move_flavor_text: Move_flavor_textListRelationFilter
+  move_meta_ailment_names: Move_meta_ailment_namesListRelationFilter
+  move_meta_category_prose: Move_meta_category_proseListRelationFilter
+  move_names: Move_namesListRelationFilter
+  move_target_prose: Move_target_proseListRelationFilter
+  nature_names: Nature_namesListRelationFilter
+  pokeathlon_stat_names: Pokeathlon_stat_namesListRelationFilter
+  pokedex_prose: Pokedex_proseListRelationFilter
+  pokemon_color_names: Pokemon_color_namesListRelationFilter
+  pokemon_form_names: Pokemon_form_namesListRelationFilter
+  pokemon_habitat_names: Pokemon_habitat_namesListRelationFilter
+  pokemon_move_method_prose: Pokemon_move_method_proseListRelationFilter
+  pokemon_shape_prose: Pokemon_shape_proseListRelationFilter
+  pokemon_species_flavor_summaries: Pokemon_species_flavor_summariesListRelationFilter
+  pokemon_species_flavor_text: Pokemon_species_flavor_textListRelationFilter
+  pokemon_species_names: Pokemon_species_namesListRelationFilter
+  pokemon_species_prose: Pokemon_species_proseListRelationFilter
+  region_names: Region_namesListRelationFilter
+  stat_hint_names: Stat_hint_namesListRelationFilter
+  stat_names: Stat_namesListRelationFilter
+  super_contest_effect_prose: Super_contest_effect_proseListRelationFilter
+  type_names: Type_namesListRelationFilter
+  version_names: Version_namesListRelationFilter
+}
+
+input BoolFilter {
+  equals: Boolean
+  not: NestedBoolFilter
+}
+
+input NestedBoolFilter {
+  equals: Boolean
+  not: NestedBoolFilter
+}
+
+input Ability_changelog_proseListRelationFilter {
+  every: ability_changelog_proseWhereInput
+  some: ability_changelog_proseWhereInput
+  none: ability_changelog_proseWhereInput
+}
+
+input ability_changelog_proseWhereInput {
+  AND: [ability_changelog_proseWhereInput!]
+  OR: [ability_changelog_proseWhereInput!]
+  NOT: [ability_changelog_proseWhereInput!]
+  ability_changelog_id: IntFilter
+  local_language_id: IntFilter
+  effect: StringFilter
+  languages: LanguagesRelationFilter
+  ability_changelog: Ability_changelogRelationFilter
+}
+
+input Ability_changelogRelationFilter {
+  is: ability_changelogWhereInput
+  isNot: ability_changelogWhereInput
+}
+
+input ability_changelogWhereInput {
+  AND: [ability_changelogWhereInput!]
+  OR: [ability_changelogWhereInput!]
+  NOT: [ability_changelogWhereInput!]
+  id: IntFilter
+  ability_id: IntFilter
+  changed_in_version_group_id: IntFilter
+  version_groups: Version_groupsRelationFilter
+  abilities: AbilitiesRelationFilter
+  ability_changelog_prose: Ability_changelog_proseListRelationFilter
+}
+
+input Version_groupsRelationFilter {
+  is: version_groupsWhereInput
+  isNot: version_groupsWhereInput
+}
+
+input version_groupsWhereInput {
+  AND: [version_groupsWhereInput!]
+  OR: [version_groupsWhereInput!]
+  NOT: [version_groupsWhereInput!]
+  id: IntFilter
+  generation_id: IntFilter
+  pokedex_id: IntFilter
+  pokedexes: PokedexesRelationFilter
+  generations: GenerationsRelationFilter
+  ability_changelog: Ability_changelogListRelationFilter
+  ability_flavor_text: Ability_flavor_textListRelationFilter
+  encounter_slots: Encounter_slotsListRelationFilter
+  item_flavor_text: Item_flavor_textListRelationFilter
+  machines: MachinesListRelationFilter
+  move_changelog: Move_changelogListRelationFilter
+  move_effect_changelog: Move_effect_changelogListRelationFilter
+  move_flavor_text: Move_flavor_textListRelationFilter
+  pokemon_forms: Pokemon_formsListRelationFilter
+  version_group_regions: Version_group_regionsListRelationFilter
+  versions: VersionsListRelationFilter
+}
+
+input PokedexesRelationFilter {
+  is: pokedexesWhereInput
+  isNot: pokedexesWhereInput
+}
+
+input pokedexesWhereInput {
+  AND: [pokedexesWhereInput!]
+  OR: [pokedexesWhereInput!]
+  NOT: [pokedexesWhereInput!]
+  id: IntFilter
+  region_id: IntNullableFilter
+  identifier: StringFilter
+  regions: RegionsRelationFilter
+  generations: GenerationsListRelationFilter
+  pokedex_prose: Pokedex_proseListRelationFilter
+  pokemon_dex_numbers: Pokemon_dex_numbersListRelationFilter
+  version_groups: Version_groupsListRelationFilter
+}
+
+input RegionsRelationFilter {
+  is: regionsWhereInput
+  isNot: regionsWhereInput
+}
+
+input regionsWhereInput {
+  AND: [regionsWhereInput!]
+  OR: [regionsWhereInput!]
+  NOT: [regionsWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  generations: GenerationsListRelationFilter
+  locations: LocationsListRelationFilter
+  pokedexes: PokedexesListRelationFilter
+  region_names: Region_namesListRelationFilter
+  version_group_regions: Version_group_regionsListRelationFilter
+}
+
+input GenerationsListRelationFilter {
+  every: generationsWhereInput
+  some: generationsWhereInput
+  none: generationsWhereInput
+}
+
+input generationsWhereInput {
+  AND: [generationsWhereInput!]
+  OR: [generationsWhereInput!]
+  NOT: [generationsWhereInput!]
+  id: IntFilter
+  main_region_id: IntFilter
+  canonical_pokedex_id: IntFilter
+  identifier: StringFilter
+  pokedexes: PokedexesRelationFilter
+  regions: RegionsRelationFilter
+  abilities: AbilitiesListRelationFilter
+  generation_names: Generation_namesListRelationFilter
+  item_game_indices: Item_game_indicesListRelationFilter
+  location_game_indices: Location_game_indicesListRelationFilter
+  moves: MovesListRelationFilter
+  pokemon_game_indices: Pokemon_game_indicesListRelationFilter
+  pokemon_species: Pokemon_speciesListRelationFilter
+  types: TypesListRelationFilter
+  version_groups: Version_groupsListRelationFilter
+}
+
+input AbilitiesListRelationFilter {
+  every: abilitiesWhereInput
+  some: abilitiesWhereInput
+  none: abilitiesWhereInput
+}
+
+input abilitiesWhereInput {
+  AND: [abilitiesWhereInput!]
+  OR: [abilitiesWhereInput!]
+  NOT: [abilitiesWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  generation_id: IntFilter
+  generations: GenerationsRelationFilter
+  ability_changelog: Ability_changelogListRelationFilter
+  ability_flavor_text: Ability_flavor_textListRelationFilter
+  ability_names: Ability_namesListRelationFilter
+  ability_prose: Ability_proseListRelationFilter
+  pokemon_abilities: Pokemon_abilitiesListRelationFilter
+}
+
+input GenerationsRelationFilter {
+  is: generationsWhereInput
+  isNot: generationsWhereInput
+}
+
+input Ability_changelogListRelationFilter {
+  every: ability_changelogWhereInput
+  some: ability_changelogWhereInput
+  none: ability_changelogWhereInput
+}
+
+input Ability_flavor_textListRelationFilter {
+  every: ability_flavor_textWhereInput
+  some: ability_flavor_textWhereInput
+  none: ability_flavor_textWhereInput
+}
+
+input ability_flavor_textWhereInput {
+  AND: [ability_flavor_textWhereInput!]
+  OR: [ability_flavor_textWhereInput!]
+  NOT: [ability_flavor_textWhereInput!]
+  ability_id: IntFilter
+  version_group_id: IntFilter
+  language_id: IntFilter
+  flavor_text: StringFilter
+  languages: LanguagesRelationFilter
+  version_groups: Version_groupsRelationFilter
+  abilities: AbilitiesRelationFilter
+}
+
+input AbilitiesRelationFilter {
+  is: abilitiesWhereInput
+  isNot: abilitiesWhereInput
+}
+
+input Ability_namesListRelationFilter {
+  every: ability_namesWhereInput
+  some: ability_namesWhereInput
+  none: ability_namesWhereInput
+}
+
+input ability_namesWhereInput {
+  AND: [ability_namesWhereInput!]
+  OR: [ability_namesWhereInput!]
+  NOT: [ability_namesWhereInput!]
+  ability_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  abilities: AbilitiesRelationFilter
+}
+
+input Ability_proseListRelationFilter {
+  every: ability_proseWhereInput
+  some: ability_proseWhereInput
+  none: ability_proseWhereInput
+}
+
+input ability_proseWhereInput {
+  AND: [ability_proseWhereInput!]
+  OR: [ability_proseWhereInput!]
+  NOT: [ability_proseWhereInput!]
+  ability_id: IntFilter
+  local_language_id: IntFilter
+  effect: StringNullableFilter
+  short_effect: StringNullableFilter
+  languages: LanguagesRelationFilter
+  abilities: AbilitiesRelationFilter
+}
+
+input StringNullableFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableFilter
+}
+
+input NestedStringNullableFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableFilter
+}
+
+input Pokemon_abilitiesListRelationFilter {
+  every: pokemon_abilitiesWhereInput
+  some: pokemon_abilitiesWhereInput
+  none: pokemon_abilitiesWhereInput
+}
+
+input pokemon_abilitiesWhereInput {
+  AND: [pokemon_abilitiesWhereInput!]
+  OR: [pokemon_abilitiesWhereInput!]
+  NOT: [pokemon_abilitiesWhereInput!]
+  pokemon_id: IntFilter
+  ability_id: IntFilter
+  is_dream: BoolFilter
+  slot: IntFilter
+  abilities: AbilitiesRelationFilter
+  pokemon: PokemonRelationFilter
+}
+
+input PokemonRelationFilter {
+  is: pokemonWhereInput
+  isNot: pokemonWhereInput
+}
+
+input pokemonWhereInput {
+  AND: [pokemonWhereInput!]
+  OR: [pokemonWhereInput!]
+  NOT: [pokemonWhereInput!]
+  id: IntFilter
+  species_id: IntNullableFilter
+  height: IntFilter
+  weight: IntFilter
+  base_experience: IntFilter
+  order: IntFilter
+  is_default: BoolFilter
+  pokemon_species: Pokemon_speciesRelationFilter
+  encounters: EncountersListRelationFilter
+  pokemon_abilities: Pokemon_abilitiesListRelationFilter
+  pokemon_forms: Pokemon_formsListRelationFilter
+  pokemon_game_indices: Pokemon_game_indicesListRelationFilter
+  pokemon_items: Pokemon_itemsListRelationFilter
+  pokemon_stats: Pokemon_statsListRelationFilter
+  pokemon_types: Pokemon_typesListRelationFilter
+}
+
+input Pokemon_speciesRelationFilter {
+  is: pokemon_speciesWhereInput
+  isNot: pokemon_speciesWhereInput
+}
+
+input pokemon_speciesWhereInput {
+  AND: [pokemon_speciesWhereInput!]
+  OR: [pokemon_speciesWhereInput!]
+  NOT: [pokemon_speciesWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  generation_id: IntNullableFilter
+  evolves_from_species_id: IntNullableFilter
+  evolution_chain_id: IntNullableFilter
+  color_id: IntFilter
+  shape_id: IntFilter
+  habitat_id: IntNullableFilter
+  gender_rate: IntFilter
+  capture_rate: IntFilter
+  base_happiness: IntFilter
+  is_baby: BoolFilter
+  hatch_counter: IntFilter
+  has_gender_differences: BoolFilter
+  growth_rate_id: IntFilter
+  forms_switchable: BoolFilter
+  growth_rates: Growth_ratesRelationFilter
+  pokemon_habitats: Pokemon_habitatsRelationFilter
+  shape: Pokemon_shapesRelationFilter
+  color: Pokemon_colorsRelationFilter
+  evolution_chains: Evolution_chainsRelationFilter
+  pokemon_species: Pokemon_speciesRelationFilter
+  generations: GenerationsRelationFilter
+  pokemon: PokemonListRelationFilter
+  pokemon_dex_numbers: Pokemon_dex_numbersListRelationFilter
+  pokemon_egg_groups: Pokemon_egg_groupsListRelationFilter
+  pokemon_evolution_pokemon_evolution_trade_species_idTopokemon_species: Pokemon_evolutionListRelationFilter
+  pokemon_evolution_pokemon_evolution_party_species_idTopokemon_species: Pokemon_evolutionListRelationFilter
+  pokemon_evolution_pokemon_evolution_evolved_species_idTopokemon_species: Pokemon_evolutionListRelationFilter
+  other_pokemon_species: Pokemon_speciesListRelationFilter
+  pokemon_species_flavor_summaries: Pokemon_species_flavor_summariesListRelationFilter
+  pokemon_species_flavor_text: Pokemon_species_flavor_textListRelationFilter
+  pokemon_species_names: Pokemon_species_namesListRelationFilter
+  pokemon_species_prose: Pokemon_species_proseListRelationFilter
+}
+
+input Growth_ratesRelationFilter {
+  is: growth_ratesWhereInput
+  isNot: growth_ratesWhereInput
+}
+
+input growth_ratesWhereInput {
+  AND: [growth_ratesWhereInput!]
+  OR: [growth_ratesWhereInput!]
+  NOT: [growth_ratesWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  formula: StringFilter
+  experience: ExperienceListRelationFilter
+  growth_rate_prose: Growth_rate_proseListRelationFilter
+  pokemon_species: Pokemon_speciesListRelationFilter
+}
+
+input ExperienceListRelationFilter {
+  every: experienceWhereInput
+  some: experienceWhereInput
+  none: experienceWhereInput
+}
+
+input experienceWhereInput {
+  AND: [experienceWhereInput!]
+  OR: [experienceWhereInput!]
+  NOT: [experienceWhereInput!]
+  growth_rate_id: IntFilter
+  level: IntFilter
+  experience: IntFilter
+  growth_rates: Growth_ratesRelationFilter
+}
+
+input Growth_rate_proseListRelationFilter {
+  every: growth_rate_proseWhereInput
+  some: growth_rate_proseWhereInput
+  none: growth_rate_proseWhereInput
+}
+
+input growth_rate_proseWhereInput {
+  AND: [growth_rate_proseWhereInput!]
+  OR: [growth_rate_proseWhereInput!]
+  NOT: [growth_rate_proseWhereInput!]
+  growth_rate_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  growth_rates: Growth_ratesRelationFilter
+}
+
+input Pokemon_speciesListRelationFilter {
+  every: pokemon_speciesWhereInput
+  some: pokemon_speciesWhereInput
+  none: pokemon_speciesWhereInput
+}
+
+input Pokemon_habitatsRelationFilter {
+  is: pokemon_habitatsWhereInput
+  isNot: pokemon_habitatsWhereInput
+}
+
+input pokemon_habitatsWhereInput {
+  AND: [pokemon_habitatsWhereInput!]
+  OR: [pokemon_habitatsWhereInput!]
+  NOT: [pokemon_habitatsWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  pokemon_habitat_names: Pokemon_habitat_namesListRelationFilter
+  pokemon_species: Pokemon_speciesListRelationFilter
+}
+
+input Pokemon_habitat_namesListRelationFilter {
+  every: pokemon_habitat_namesWhereInput
+  some: pokemon_habitat_namesWhereInput
+  none: pokemon_habitat_namesWhereInput
+}
+
+input pokemon_habitat_namesWhereInput {
+  AND: [pokemon_habitat_namesWhereInput!]
+  OR: [pokemon_habitat_namesWhereInput!]
+  NOT: [pokemon_habitat_namesWhereInput!]
+  pokemon_habitat_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  pokemon_habitats: Pokemon_habitatsRelationFilter
+}
+
+input Pokemon_shapesRelationFilter {
+  is: pokemon_shapesWhereInput
+  isNot: pokemon_shapesWhereInput
+}
+
+input pokemon_shapesWhereInput {
+  AND: [pokemon_shapesWhereInput!]
+  OR: [pokemon_shapesWhereInput!]
+  NOT: [pokemon_shapesWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  pokemon_shape_prose: Pokemon_shape_proseListRelationFilter
+  pokemon_species: Pokemon_speciesListRelationFilter
+}
+
+input Pokemon_shape_proseListRelationFilter {
+  every: pokemon_shape_proseWhereInput
+  some: pokemon_shape_proseWhereInput
+  none: pokemon_shape_proseWhereInput
+}
+
+input pokemon_shape_proseWhereInput {
+  AND: [pokemon_shape_proseWhereInput!]
+  OR: [pokemon_shape_proseWhereInput!]
+  NOT: [pokemon_shape_proseWhereInput!]
+  pokemon_shape_id: IntFilter
+  local_language_id: IntFilter
+  name: StringNullableFilter
+  awesome_name: StringNullableFilter
+  languages: LanguagesRelationFilter
+  pokemon_shapes: Pokemon_shapesRelationFilter
+}
+
+input Pokemon_colorsRelationFilter {
+  is: pokemon_colorsWhereInput
+  isNot: pokemon_colorsWhereInput
+}
+
+input pokemon_colorsWhereInput {
+  AND: [pokemon_colorsWhereInput!]
+  OR: [pokemon_colorsWhereInput!]
+  NOT: [pokemon_colorsWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  pokemon_color_names: Pokemon_color_namesListRelationFilter
+  pokemon_species: Pokemon_speciesListRelationFilter
+}
+
+input Pokemon_color_namesListRelationFilter {
+  every: pokemon_color_namesWhereInput
+  some: pokemon_color_namesWhereInput
+  none: pokemon_color_namesWhereInput
+}
+
+input pokemon_color_namesWhereInput {
+  AND: [pokemon_color_namesWhereInput!]
+  OR: [pokemon_color_namesWhereInput!]
+  NOT: [pokemon_color_namesWhereInput!]
+  pokemon_color_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  pokemon_colors: Pokemon_colorsRelationFilter
+}
+
+input Evolution_chainsRelationFilter {
+  is: evolution_chainsWhereInput
+  isNot: evolution_chainsWhereInput
+}
+
+input evolution_chainsWhereInput {
+  AND: [evolution_chainsWhereInput!]
+  OR: [evolution_chainsWhereInput!]
+  NOT: [evolution_chainsWhereInput!]
+  id: IntFilter
+  baby_trigger_item_id: IntNullableFilter
+  items: ItemsRelationFilter
+  pokemon_species: Pokemon_speciesListRelationFilter
+}
+
+input ItemsRelationFilter {
+  is: itemsWhereInput
+  isNot: itemsWhereInput
+}
+
+input itemsWhereInput {
+  AND: [itemsWhereInput!]
+  OR: [itemsWhereInput!]
+  NOT: [itemsWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  category_id: IntFilter
+  cost: IntFilter
+  fling_power: IntNullableFilter
+  fling_effect_id: IntNullableFilter
+  item_fling_effects: Item_fling_effectsRelationFilter
+  item_categories: Item_categoriesRelationFilter
+  berries: BerriesListRelationFilter
+  evolution_chains: Evolution_chainsListRelationFilter
+  item_flag_map: Item_flag_mapListRelationFilter
+  item_flavor_summaries: Item_flavor_summariesListRelationFilter
+  item_flavor_text: Item_flavor_textListRelationFilter
+  item_game_indices: Item_game_indicesListRelationFilter
+  item_names: Item_namesListRelationFilter
+  item_prose: Item_proseListRelationFilter
+  machines: MachinesListRelationFilter
+  pokemon_evolution_itemsTopokemon_evolution_held_item_id: Pokemon_evolutionListRelationFilter
+  pokemon_evolution_itemsTopokemon_evolution_trigger_item_id: Pokemon_evolutionListRelationFilter
+  pokemon_items: Pokemon_itemsListRelationFilter
+}
+
+input Item_fling_effectsRelationFilter {
+  is: item_fling_effectsWhereInput
+  isNot: item_fling_effectsWhereInput
+}
+
+input item_fling_effectsWhereInput {
+  AND: [item_fling_effectsWhereInput!]
+  OR: [item_fling_effectsWhereInput!]
+  NOT: [item_fling_effectsWhereInput!]
+  id: IntFilter
+  item_fling_effect_prose: Item_fling_effect_proseListRelationFilter
+  items: ItemsListRelationFilter
+}
+
+input Item_fling_effect_proseListRelationFilter {
+  every: item_fling_effect_proseWhereInput
+  some: item_fling_effect_proseWhereInput
+  none: item_fling_effect_proseWhereInput
+}
+
+input item_fling_effect_proseWhereInput {
+  AND: [item_fling_effect_proseWhereInput!]
+  OR: [item_fling_effect_proseWhereInput!]
+  NOT: [item_fling_effect_proseWhereInput!]
+  item_fling_effect_id: IntFilter
+  local_language_id: IntFilter
+  effect: StringFilter
+  languages: LanguagesRelationFilter
+  item_fling_effects: Item_fling_effectsRelationFilter
+}
+
+input ItemsListRelationFilter {
+  every: itemsWhereInput
+  some: itemsWhereInput
+  none: itemsWhereInput
+}
+
+input Item_categoriesRelationFilter {
+  is: item_categoriesWhereInput
+  isNot: item_categoriesWhereInput
+}
+
+input item_categoriesWhereInput {
+  AND: [item_categoriesWhereInput!]
+  OR: [item_categoriesWhereInput!]
+  NOT: [item_categoriesWhereInput!]
+  id: IntFilter
+  pocket_id: IntFilter
+  identifier: StringFilter
+  item_pockets: Item_pocketsRelationFilter
+  item_category_prose: Item_category_proseListRelationFilter
+  items: ItemsListRelationFilter
+}
+
+input Item_pocketsRelationFilter {
+  is: item_pocketsWhereInput
+  isNot: item_pocketsWhereInput
+}
+
+input item_pocketsWhereInput {
+  AND: [item_pocketsWhereInput!]
+  OR: [item_pocketsWhereInput!]
+  NOT: [item_pocketsWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  item_categories: Item_categoriesListRelationFilter
+  item_pocket_names: Item_pocket_namesListRelationFilter
+}
+
+input Item_categoriesListRelationFilter {
+  every: item_categoriesWhereInput
+  some: item_categoriesWhereInput
+  none: item_categoriesWhereInput
+}
+
+input Item_pocket_namesListRelationFilter {
+  every: item_pocket_namesWhereInput
+  some: item_pocket_namesWhereInput
+  none: item_pocket_namesWhereInput
+}
+
+input item_pocket_namesWhereInput {
+  AND: [item_pocket_namesWhereInput!]
+  OR: [item_pocket_namesWhereInput!]
+  NOT: [item_pocket_namesWhereInput!]
+  item_pocket_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  item_pockets: Item_pocketsRelationFilter
+}
+
+input Item_category_proseListRelationFilter {
+  every: item_category_proseWhereInput
+  some: item_category_proseWhereInput
+  none: item_category_proseWhereInput
+}
+
+input item_category_proseWhereInput {
+  AND: [item_category_proseWhereInput!]
+  OR: [item_category_proseWhereInput!]
+  NOT: [item_category_proseWhereInput!]
+  item_category_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  item_categories: Item_categoriesRelationFilter
+}
+
+input BerriesListRelationFilter {
+  every: berriesWhereInput
+  some: berriesWhereInput
+  none: berriesWhereInput
+}
+
+input berriesWhereInput {
+  AND: [berriesWhereInput!]
+  OR: [berriesWhereInput!]
+  NOT: [berriesWhereInput!]
+  id: IntFilter
+  item_id: IntFilter
+  firmness_id: IntFilter
+  natural_gift_power: IntNullableFilter
+  natural_gift_type_id: IntNullableFilter
+  size: IntFilter
+  max_harvest: IntFilter
+  growth_time: IntFilter
+  soil_dryness: IntFilter
+  smoothness: IntFilter
+  types: TypesRelationFilter
+  berry_firmness: Berry_firmnessRelationFilter
+  items: ItemsRelationFilter
+  berry_flavors: Berry_flavorsListRelationFilter
+}
+
+input TypesRelationFilter {
+  is: typesWhereInput
+  isNot: typesWhereInput
+}
+
+input typesWhereInput {
+  AND: [typesWhereInput!]
+  OR: [typesWhereInput!]
+  NOT: [typesWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  generation_id: IntFilter
+  damage_class_id: IntNullableFilter
+  move_damage_classes: Move_damage_classesRelationFilter
+  generations: GenerationsRelationFilter
+  berries: BerriesListRelationFilter
+  move_changelog: Move_changelogListRelationFilter
+  moves: MovesListRelationFilter
+  pokemon_types: Pokemon_typesListRelationFilter
+  type_efficacy_type_efficacy_target_type_idTotypes: Type_efficacyListRelationFilter
+  type_efficacy_type_efficacy_damage_type_idTotypes: Type_efficacyListRelationFilter
+  type_names: Type_namesListRelationFilter
+}
+
+input Move_damage_classesRelationFilter {
+  is: move_damage_classesWhereInput
+  isNot: move_damage_classesWhereInput
+}
+
+input move_damage_classesWhereInput {
+  AND: [move_damage_classesWhereInput!]
+  OR: [move_damage_classesWhereInput!]
+  NOT: [move_damage_classesWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  move_damage_class_prose: Move_damage_class_proseListRelationFilter
+  moves: MovesListRelationFilter
+  stats: StatsListRelationFilter
+  types: TypesListRelationFilter
+}
+
+input Move_damage_class_proseListRelationFilter {
+  every: move_damage_class_proseWhereInput
+  some: move_damage_class_proseWhereInput
+  none: move_damage_class_proseWhereInput
+}
+
+input move_damage_class_proseWhereInput {
+  AND: [move_damage_class_proseWhereInput!]
+  OR: [move_damage_class_proseWhereInput!]
+  NOT: [move_damage_class_proseWhereInput!]
+  move_damage_class_id: IntFilter
+  local_language_id: IntFilter
+  name: StringNullableFilter
+  description: StringNullableFilter
+  languages: LanguagesRelationFilter
+  move_damage_classes: Move_damage_classesRelationFilter
+}
+
+input StatsListRelationFilter {
+  every: statsWhereInput
+  some: statsWhereInput
+  none: statsWhereInput
+}
+
+input statsWhereInput {
+  AND: [statsWhereInput!]
+  OR: [statsWhereInput!]
+  NOT: [statsWhereInput!]
+  id: IntFilter
+  damage_class_id: IntNullableFilter
+  identifier: StringFilter
+  is_battle_only: BoolFilter
+  move_damage_classes: Move_damage_classesRelationFilter
+  move_meta_stat_changes: Move_meta_stat_changesListRelationFilter
+  natures_natures_increased_stat_idTostats: NaturesListRelationFilter
+  natures_natures_decreased_stat_idTostats: NaturesListRelationFilter
+  pokemon_stats: Pokemon_statsListRelationFilter
+  stat_hints: Stat_hintsListRelationFilter
+  stat_names: Stat_namesListRelationFilter
+}
+
+input Move_meta_stat_changesListRelationFilter {
+  every: move_meta_stat_changesWhereInput
+  some: move_meta_stat_changesWhereInput
+  none: move_meta_stat_changesWhereInput
+}
+
+input move_meta_stat_changesWhereInput {
+  AND: [move_meta_stat_changesWhereInput!]
+  OR: [move_meta_stat_changesWhereInput!]
+  NOT: [move_meta_stat_changesWhereInput!]
+  move_id: IntFilter
+  stat_id: IntFilter
+  change: IntFilter
+  stats: StatsRelationFilter
+  moves: MovesRelationFilter
+}
+
+input StatsRelationFilter {
+  is: statsWhereInput
+  isNot: statsWhereInput
+}
+
+input MovesRelationFilter {
+  is: movesWhereInput
+  isNot: movesWhereInput
+}
+
+input NaturesListRelationFilter {
+  every: naturesWhereInput
+  some: naturesWhereInput
+  none: naturesWhereInput
+}
+
+input naturesWhereInput {
+  AND: [naturesWhereInput!]
+  OR: [naturesWhereInput!]
+  NOT: [naturesWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  decreased_stat_id: IntFilter
+  increased_stat_id: IntFilter
+  hates_flavor_id: IntFilter
+  likes_flavor_id: IntFilter
+  contest_types_contest_typesTonatures_likes_flavor_id: Contest_typesRelationFilter
+  contest_types_contest_typesTonatures_hates_flavor_id: Contest_typesRelationFilter
+  stats_natures_increased_stat_idTostats: StatsRelationFilter
+  stats_natures_decreased_stat_idTostats: StatsRelationFilter
+  nature_battle_style_preferences: Nature_battle_style_preferencesListRelationFilter
+  nature_names: Nature_namesListRelationFilter
+  nature_pokeathlon_stats: Nature_pokeathlon_statsListRelationFilter
+}
+
+input Contest_typesRelationFilter {
+  is: contest_typesWhereInput
+  isNot: contest_typesWhereInput
+}
+
+input contest_typesWhereInput {
+  AND: [contest_typesWhereInput!]
+  OR: [contest_typesWhereInput!]
+  NOT: [contest_typesWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  berry_flavors: Berry_flavorsListRelationFilter
+  contest_type_names: Contest_type_namesListRelationFilter
+  moves: MovesListRelationFilter
+  natures_contest_typesTonatures_likes_flavor_id: NaturesListRelationFilter
+  natures_contest_typesTonatures_hates_flavor_id: NaturesListRelationFilter
+}
+
+input Berry_flavorsListRelationFilter {
+  every: berry_flavorsWhereInput
+  some: berry_flavorsWhereInput
+  none: berry_flavorsWhereInput
+}
+
+input berry_flavorsWhereInput {
+  AND: [berry_flavorsWhereInput!]
+  OR: [berry_flavorsWhereInput!]
+  NOT: [berry_flavorsWhereInput!]
+  berry_id: IntFilter
+  contest_type_id: IntFilter
+  flavor: IntFilter
+  contest_types: Contest_typesRelationFilter
+  berries: BerriesRelationFilter
+}
+
+input BerriesRelationFilter {
+  is: berriesWhereInput
+  isNot: berriesWhereInput
+}
+
+input Contest_type_namesListRelationFilter {
+  every: contest_type_namesWhereInput
+  some: contest_type_namesWhereInput
+  none: contest_type_namesWhereInput
+}
+
+input contest_type_namesWhereInput {
+  AND: [contest_type_namesWhereInput!]
+  OR: [contest_type_namesWhereInput!]
+  NOT: [contest_type_namesWhereInput!]
+  contest_type_id: IntFilter
+  local_language_id: IntFilter
+  name: StringNullableFilter
+  flavor: StringNullableFilter
+  color: StringNullableFilter
+  languages: LanguagesRelationFilter
+  contest_types: Contest_typesRelationFilter
+}
+
+input Nature_battle_style_preferencesListRelationFilter {
+  every: nature_battle_style_preferencesWhereInput
+  some: nature_battle_style_preferencesWhereInput
+  none: nature_battle_style_preferencesWhereInput
+}
+
+input nature_battle_style_preferencesWhereInput {
+  AND: [nature_battle_style_preferencesWhereInput!]
+  OR: [nature_battle_style_preferencesWhereInput!]
+  NOT: [nature_battle_style_preferencesWhereInput!]
+  nature_id: IntFilter
+  move_battle_style_id: IntFilter
+  low_hp_preference: IntFilter
+  high_hp_preference: IntFilter
+  move_battle_styles: Move_battle_stylesRelationFilter
+  natures: NaturesRelationFilter
+}
+
+input Move_battle_stylesRelationFilter {
+  is: move_battle_stylesWhereInput
+  isNot: move_battle_stylesWhereInput
+}
+
+input move_battle_stylesWhereInput {
+  AND: [move_battle_stylesWhereInput!]
+  OR: [move_battle_stylesWhereInput!]
+  NOT: [move_battle_stylesWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  move_battle_style_prose: Move_battle_style_proseListRelationFilter
+  nature_battle_style_preferences: Nature_battle_style_preferencesListRelationFilter
+}
+
+input Move_battle_style_proseListRelationFilter {
+  every: move_battle_style_proseWhereInput
+  some: move_battle_style_proseWhereInput
+  none: move_battle_style_proseWhereInput
+}
+
+input move_battle_style_proseWhereInput {
+  AND: [move_battle_style_proseWhereInput!]
+  OR: [move_battle_style_proseWhereInput!]
+  NOT: [move_battle_style_proseWhereInput!]
+  move_battle_style_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  move_battle_styles: Move_battle_stylesRelationFilter
+}
+
+input NaturesRelationFilter {
+  is: naturesWhereInput
+  isNot: naturesWhereInput
+}
+
+input Nature_namesListRelationFilter {
+  every: nature_namesWhereInput
+  some: nature_namesWhereInput
+  none: nature_namesWhereInput
+}
+
+input nature_namesWhereInput {
+  AND: [nature_namesWhereInput!]
+  OR: [nature_namesWhereInput!]
+  NOT: [nature_namesWhereInput!]
+  nature_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  natures: NaturesRelationFilter
+}
+
+input Nature_pokeathlon_statsListRelationFilter {
+  every: nature_pokeathlon_statsWhereInput
+  some: nature_pokeathlon_statsWhereInput
+  none: nature_pokeathlon_statsWhereInput
+}
+
+input nature_pokeathlon_statsWhereInput {
+  AND: [nature_pokeathlon_statsWhereInput!]
+  OR: [nature_pokeathlon_statsWhereInput!]
+  NOT: [nature_pokeathlon_statsWhereInput!]
+  nature_id: IntFilter
+  pokeathlon_stat_id: IntFilter
+  max_change: IntFilter
+  pokeathlon_stats: Pokeathlon_statsRelationFilter
+  natures: NaturesRelationFilter
+}
+
+input Pokeathlon_statsRelationFilter {
+  is: pokeathlon_statsWhereInput
+  isNot: pokeathlon_statsWhereInput
+}
+
+input pokeathlon_statsWhereInput {
+  AND: [pokeathlon_statsWhereInput!]
+  OR: [pokeathlon_statsWhereInput!]
+  NOT: [pokeathlon_statsWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  nature_pokeathlon_stats: Nature_pokeathlon_statsListRelationFilter
+  pokeathlon_stat_names: Pokeathlon_stat_namesListRelationFilter
+  pokemon_form_pokeathlon_stats: Pokemon_form_pokeathlon_statsListRelationFilter
+}
+
+input Pokeathlon_stat_namesListRelationFilter {
+  every: pokeathlon_stat_namesWhereInput
+  some: pokeathlon_stat_namesWhereInput
+  none: pokeathlon_stat_namesWhereInput
+}
+
+input pokeathlon_stat_namesWhereInput {
+  AND: [pokeathlon_stat_namesWhereInput!]
+  OR: [pokeathlon_stat_namesWhereInput!]
+  NOT: [pokeathlon_stat_namesWhereInput!]
+  pokeathlon_stat_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  pokeathlon_stats: Pokeathlon_statsRelationFilter
+}
+
+input Pokemon_form_pokeathlon_statsListRelationFilter {
+  every: pokemon_form_pokeathlon_statsWhereInput
+  some: pokemon_form_pokeathlon_statsWhereInput
+  none: pokemon_form_pokeathlon_statsWhereInput
+}
+
+input pokemon_form_pokeathlon_statsWhereInput {
+  AND: [pokemon_form_pokeathlon_statsWhereInput!]
+  OR: [pokemon_form_pokeathlon_statsWhereInput!]
+  NOT: [pokemon_form_pokeathlon_statsWhereInput!]
+  pokemon_form_id: IntFilter
+  pokeathlon_stat_id: IntFilter
+  minimum_stat: IntFilter
+  base_stat: IntFilter
+  maximum_stat: IntFilter
+  pokeathlon_stats: Pokeathlon_statsRelationFilter
+  pokemon_forms: Pokemon_formsRelationFilter
+}
+
+input Pokemon_formsRelationFilter {
+  is: pokemon_formsWhereInput
+  isNot: pokemon_formsWhereInput
+}
+
+input pokemon_formsWhereInput {
+  AND: [pokemon_formsWhereInput!]
+  OR: [pokemon_formsWhereInput!]
+  NOT: [pokemon_formsWhereInput!]
+  id: IntFilter
+  form_identifier: StringNullableFilter
+  pokemon_id: IntFilter
+  introduced_in_version_group_id: IntNullableFilter
+  is_default: BoolFilter
+  is_battle_only: BoolFilter
+  order: IntFilter
+  version_groups: Version_groupsRelationFilter
+  pokemon: PokemonRelationFilter
+  pokemon_form_names: Pokemon_form_namesListRelationFilter
+  pokemon_form_pokeathlon_stats: Pokemon_form_pokeathlon_statsListRelationFilter
+}
+
+input Pokemon_form_namesListRelationFilter {
+  every: pokemon_form_namesWhereInput
+  some: pokemon_form_namesWhereInput
+  none: pokemon_form_namesWhereInput
+}
+
+input pokemon_form_namesWhereInput {
+  AND: [pokemon_form_namesWhereInput!]
+  OR: [pokemon_form_namesWhereInput!]
+  NOT: [pokemon_form_namesWhereInput!]
+  pokemon_form_id: IntFilter
+  local_language_id: IntFilter
+  form_name: StringNullableFilter
+  pokemon_name: StringNullableFilter
+  languages: LanguagesRelationFilter
+  pokemon_forms: Pokemon_formsRelationFilter
+}
+
+input Pokemon_statsListRelationFilter {
+  every: pokemon_statsWhereInput
+  some: pokemon_statsWhereInput
+  none: pokemon_statsWhereInput
+}
+
+input pokemon_statsWhereInput {
+  AND: [pokemon_statsWhereInput!]
+  OR: [pokemon_statsWhereInput!]
+  NOT: [pokemon_statsWhereInput!]
+  pokemon_id: IntFilter
+  stat_id: IntFilter
+  base_stat: IntFilter
+  effort: IntFilter
+  stats: StatsRelationFilter
+  pokemon: PokemonRelationFilter
+}
+
+input Stat_hintsListRelationFilter {
+  every: stat_hintsWhereInput
+  some: stat_hintsWhereInput
+  none: stat_hintsWhereInput
+}
+
+input stat_hintsWhereInput {
+  AND: [stat_hintsWhereInput!]
+  OR: [stat_hintsWhereInput!]
+  NOT: [stat_hintsWhereInput!]
+  id: IntFilter
+  stat_id: IntFilter
+  gene_mod_5: IntFilter
+  stats: StatsRelationFilter
+  stat_hint_names: Stat_hint_namesListRelationFilter
+}
+
+input Stat_hint_namesListRelationFilter {
+  every: stat_hint_namesWhereInput
+  some: stat_hint_namesWhereInput
+  none: stat_hint_namesWhereInput
+}
+
+input stat_hint_namesWhereInput {
+  AND: [stat_hint_namesWhereInput!]
+  OR: [stat_hint_namesWhereInput!]
+  NOT: [stat_hint_namesWhereInput!]
+  stat_hint_id: IntFilter
+  local_language_id: IntFilter
+  message: StringFilter
+  languages: LanguagesRelationFilter
+  stat_hints: Stat_hintsRelationFilter
+}
+
+input Stat_hintsRelationFilter {
+  is: stat_hintsWhereInput
+  isNot: stat_hintsWhereInput
+}
+
+input Stat_namesListRelationFilter {
+  every: stat_namesWhereInput
+  some: stat_namesWhereInput
+  none: stat_namesWhereInput
+}
+
+input stat_namesWhereInput {
+  AND: [stat_namesWhereInput!]
+  OR: [stat_namesWhereInput!]
+  NOT: [stat_namesWhereInput!]
+  stat_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  stats: StatsRelationFilter
+}
+
+input TypesListRelationFilter {
+  every: typesWhereInput
+  some: typesWhereInput
+  none: typesWhereInput
+}
+
+input Move_changelogListRelationFilter {
+  every: move_changelogWhereInput
+  some: move_changelogWhereInput
+  none: move_changelogWhereInput
+}
+
+input move_changelogWhereInput {
+  AND: [move_changelogWhereInput!]
+  OR: [move_changelogWhereInput!]
+  NOT: [move_changelogWhereInput!]
+  move_id: IntFilter
+  changed_in_version_group_id: IntFilter
+  type_id: IntNullableFilter
+  effect_id: IntNullableFilter
+  effect_chance: IntNullableFilter
+  move_effects: Move_effectsRelationFilter
+  types: TypesRelationFilter
+  version_groups: Version_groupsRelationFilter
+  moves: MovesRelationFilter
+}
+
+input Move_effectsRelationFilter {
+  is: move_effectsWhereInput
+  isNot: move_effectsWhereInput
+}
+
+input move_effectsWhereInput {
+  AND: [move_effectsWhereInput!]
+  OR: [move_effectsWhereInput!]
+  NOT: [move_effectsWhereInput!]
+  id: IntFilter
+  move_changelog: Move_changelogListRelationFilter
+  move_effect_changelog: Move_effect_changelogListRelationFilter
+  move_effect_prose: Move_effect_proseListRelationFilter
+  moves: MovesListRelationFilter
+}
+
+input Move_effect_changelogListRelationFilter {
+  every: move_effect_changelogWhereInput
+  some: move_effect_changelogWhereInput
+  none: move_effect_changelogWhereInput
+}
+
+input move_effect_changelogWhereInput {
+  AND: [move_effect_changelogWhereInput!]
+  OR: [move_effect_changelogWhereInput!]
+  NOT: [move_effect_changelogWhereInput!]
+  id: IntFilter
+  effect_id: IntFilter
+  changed_in_version_group_id: IntFilter
+  version_groups: Version_groupsRelationFilter
+  move_effects: Move_effectsRelationFilter
+  move_effect_changelog_prose: Move_effect_changelog_proseListRelationFilter
+}
+
+input Move_effect_changelog_proseListRelationFilter {
+  every: move_effect_changelog_proseWhereInput
+  some: move_effect_changelog_proseWhereInput
+  none: move_effect_changelog_proseWhereInput
+}
+
+input move_effect_changelog_proseWhereInput {
+  AND: [move_effect_changelog_proseWhereInput!]
+  OR: [move_effect_changelog_proseWhereInput!]
+  NOT: [move_effect_changelog_proseWhereInput!]
+  move_effect_changelog_id: IntFilter
+  local_language_id: IntFilter
+  effect: StringFilter
+  languages: LanguagesRelationFilter
+  move_effect_changelog: Move_effect_changelogRelationFilter
+}
+
+input Move_effect_changelogRelationFilter {
+  is: move_effect_changelogWhereInput
+  isNot: move_effect_changelogWhereInput
+}
+
+input Move_effect_proseListRelationFilter {
+  every: move_effect_proseWhereInput
+  some: move_effect_proseWhereInput
+  none: move_effect_proseWhereInput
+}
+
+input move_effect_proseWhereInput {
+  AND: [move_effect_proseWhereInput!]
+  OR: [move_effect_proseWhereInput!]
+  NOT: [move_effect_proseWhereInput!]
+  move_effect_id: IntFilter
+  local_language_id: IntFilter
+  short_effect: StringNullableFilter
+  effect: StringNullableFilter
+  languages: LanguagesRelationFilter
+  move_effects: Move_effectsRelationFilter
+}
+
+input Pokemon_typesListRelationFilter {
+  every: pokemon_typesWhereInput
+  some: pokemon_typesWhereInput
+  none: pokemon_typesWhereInput
+}
+
+input pokemon_typesWhereInput {
+  AND: [pokemon_typesWhereInput!]
+  OR: [pokemon_typesWhereInput!]
+  NOT: [pokemon_typesWhereInput!]
+  pokemon_id: IntFilter
+  type_id: IntFilter
+  slot: IntFilter
+  types: TypesRelationFilter
+  pokemon: PokemonRelationFilter
+}
+
+input Type_efficacyListRelationFilter {
+  every: type_efficacyWhereInput
+  some: type_efficacyWhereInput
+  none: type_efficacyWhereInput
+}
+
+input type_efficacyWhereInput {
+  AND: [type_efficacyWhereInput!]
+  OR: [type_efficacyWhereInput!]
+  NOT: [type_efficacyWhereInput!]
+  damage_type_id: IntFilter
+  target_type_id: IntFilter
+  damage_factor: IntFilter
+  types_type_efficacy_target_type_idTotypes: TypesRelationFilter
+  types_type_efficacy_damage_type_idTotypes: TypesRelationFilter
+}
+
+input Type_namesListRelationFilter {
+  every: type_namesWhereInput
+  some: type_namesWhereInput
+  none: type_namesWhereInput
+}
+
+input type_namesWhereInput {
+  AND: [type_namesWhereInput!]
+  OR: [type_namesWhereInput!]
+  NOT: [type_namesWhereInput!]
+  type_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  types: TypesRelationFilter
+}
+
+input Berry_firmnessRelationFilter {
+  is: berry_firmnessWhereInput
+  isNot: berry_firmnessWhereInput
+}
+
+input berry_firmnessWhereInput {
+  AND: [berry_firmnessWhereInput!]
+  OR: [berry_firmnessWhereInput!]
+  NOT: [berry_firmnessWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  berries: BerriesListRelationFilter
+  berry_firmness_names: Berry_firmness_namesListRelationFilter
+}
+
+input Berry_firmness_namesListRelationFilter {
+  every: berry_firmness_namesWhereInput
+  some: berry_firmness_namesWhereInput
+  none: berry_firmness_namesWhereInput
+}
+
+input berry_firmness_namesWhereInput {
+  AND: [berry_firmness_namesWhereInput!]
+  OR: [berry_firmness_namesWhereInput!]
+  NOT: [berry_firmness_namesWhereInput!]
+  berry_firmness_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  berry_firmness: Berry_firmnessRelationFilter
+}
+
+input Evolution_chainsListRelationFilter {
+  every: evolution_chainsWhereInput
+  some: evolution_chainsWhereInput
+  none: evolution_chainsWhereInput
+}
+
+input Item_flag_mapListRelationFilter {
+  every: item_flag_mapWhereInput
+  some: item_flag_mapWhereInput
+  none: item_flag_mapWhereInput
+}
+
+input item_flag_mapWhereInput {
+  AND: [item_flag_mapWhereInput!]
+  OR: [item_flag_mapWhereInput!]
+  NOT: [item_flag_mapWhereInput!]
+  item_id: IntFilter
+  item_flag_id: IntFilter
+  item_flags: Item_flagsRelationFilter
+  items: ItemsRelationFilter
+}
+
+input Item_flagsRelationFilter {
+  is: item_flagsWhereInput
+  isNot: item_flagsWhereInput
+}
+
+input item_flagsWhereInput {
+  AND: [item_flagsWhereInput!]
+  OR: [item_flagsWhereInput!]
+  NOT: [item_flagsWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  item_flag_map: Item_flag_mapListRelationFilter
+  item_flag_prose: Item_flag_proseListRelationFilter
+}
+
+input Item_flag_proseListRelationFilter {
+  every: item_flag_proseWhereInput
+  some: item_flag_proseWhereInput
+  none: item_flag_proseWhereInput
+}
+
+input item_flag_proseWhereInput {
+  AND: [item_flag_proseWhereInput!]
+  OR: [item_flag_proseWhereInput!]
+  NOT: [item_flag_proseWhereInput!]
+  item_flag_id: IntFilter
+  local_language_id: IntFilter
+  name: StringNullableFilter
+  description: StringNullableFilter
+  languages: LanguagesRelationFilter
+  item_flags: Item_flagsRelationFilter
+}
+
+input Item_flavor_summariesListRelationFilter {
+  every: item_flavor_summariesWhereInput
+  some: item_flavor_summariesWhereInput
+  none: item_flavor_summariesWhereInput
+}
+
+input item_flavor_summariesWhereInput {
+  AND: [item_flavor_summariesWhereInput!]
+  OR: [item_flavor_summariesWhereInput!]
+  NOT: [item_flavor_summariesWhereInput!]
+  item_id: IntFilter
+  local_language_id: IntFilter
+  flavor_summary: StringNullableFilter
+  languages: LanguagesRelationFilter
+  items: ItemsRelationFilter
+}
+
+input Item_flavor_textListRelationFilter {
+  every: item_flavor_textWhereInput
+  some: item_flavor_textWhereInput
+  none: item_flavor_textWhereInput
+}
+
+input item_flavor_textWhereInput {
+  AND: [item_flavor_textWhereInput!]
+  OR: [item_flavor_textWhereInput!]
+  NOT: [item_flavor_textWhereInput!]
+  item_id: IntFilter
+  version_group_id: IntFilter
+  language_id: IntFilter
+  flavor_text: StringFilter
+  languages: LanguagesRelationFilter
+  version_groups: Version_groupsRelationFilter
+  items: ItemsRelationFilter
+}
+
+input Item_game_indicesListRelationFilter {
+  every: item_game_indicesWhereInput
+  some: item_game_indicesWhereInput
+  none: item_game_indicesWhereInput
+}
+
+input item_game_indicesWhereInput {
+  AND: [item_game_indicesWhereInput!]
+  OR: [item_game_indicesWhereInput!]
+  NOT: [item_game_indicesWhereInput!]
+  item_id: IntFilter
+  generation_id: IntFilter
+  game_index: IntFilter
+  generations: GenerationsRelationFilter
+  items: ItemsRelationFilter
+}
+
+input Item_namesListRelationFilter {
+  every: item_namesWhereInput
+  some: item_namesWhereInput
+  none: item_namesWhereInput
+}
+
+input item_namesWhereInput {
+  AND: [item_namesWhereInput!]
+  OR: [item_namesWhereInput!]
+  NOT: [item_namesWhereInput!]
+  item_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  items: ItemsRelationFilter
+}
+
+input Item_proseListRelationFilter {
+  every: item_proseWhereInput
+  some: item_proseWhereInput
+  none: item_proseWhereInput
+}
+
+input item_proseWhereInput {
+  AND: [item_proseWhereInput!]
+  OR: [item_proseWhereInput!]
+  NOT: [item_proseWhereInput!]
+  item_id: IntFilter
+  local_language_id: IntFilter
+  short_effect: StringNullableFilter
+  effect: StringNullableFilter
+  languages: LanguagesRelationFilter
+  items: ItemsRelationFilter
+}
+
+input MachinesListRelationFilter {
+  every: machinesWhereInput
+  some: machinesWhereInput
+  none: machinesWhereInput
+}
+
+input machinesWhereInput {
+  AND: [machinesWhereInput!]
+  OR: [machinesWhereInput!]
+  NOT: [machinesWhereInput!]
+  machine_number: IntFilter
+  version_group_id: IntFilter
+  item_id: IntFilter
+  move_id: IntFilter
+  moves: MovesRelationFilter
+  items: ItemsRelationFilter
+  version_groups: Version_groupsRelationFilter
+}
+
+input Pokemon_evolutionListRelationFilter {
+  every: pokemon_evolutionWhereInput
+  some: pokemon_evolutionWhereInput
+  none: pokemon_evolutionWhereInput
+}
+
+input pokemon_evolutionWhereInput {
+  AND: [pokemon_evolutionWhereInput!]
+  OR: [pokemon_evolutionWhereInput!]
+  NOT: [pokemon_evolutionWhereInput!]
+  id: IntFilter
+  evolved_species_id: IntFilter
+  evolution_trigger_id: IntFilter
+  trigger_item_id: IntNullableFilter
+  minimum_level: IntNullableFilter
+  gender: StringNullableFilter
+  location_id: IntNullableFilter
+  held_item_id: IntNullableFilter
+  time_of_day: StringNullableFilter
+  known_move_id: IntNullableFilter
+  minimum_happiness: IntNullableFilter
+  minimum_beauty: IntNullableFilter
+  relative_physical_stats: IntNullableFilter
+  party_species_id: IntNullableFilter
+  trade_species_id: IntNullableFilter
+  pokemon_species_pokemon_evolution_trade_species_idTopokemon_species: Pokemon_speciesRelationFilter
+  pokemon_species_pokemon_evolution_party_species_idTopokemon_species: Pokemon_speciesRelationFilter
+  moves: MovesRelationFilter
+  items_itemsTopokemon_evolution_held_item_id: ItemsRelationFilter
+  locations: LocationsRelationFilter
+  items_itemsTopokemon_evolution_trigger_item_id: ItemsRelationFilter
+  evolution_triggers: Evolution_triggersRelationFilter
+  pokemon_species_pokemon_evolution_evolved_species_idTopokemon_species: Pokemon_speciesRelationFilter
+}
+
+input LocationsRelationFilter {
+  is: locationsWhereInput
+  isNot: locationsWhereInput
+}
+
+input locationsWhereInput {
+  AND: [locationsWhereInput!]
+  OR: [locationsWhereInput!]
+  NOT: [locationsWhereInput!]
+  id: IntFilter
+  region_id: IntNullableFilter
+  identifier: StringFilter
+  regions: RegionsRelationFilter
+  location_areas: Location_areasListRelationFilter
+  location_game_indices: Location_game_indicesListRelationFilter
+  location_names: Location_namesListRelationFilter
+  pokemon_evolution: Pokemon_evolutionListRelationFilter
+}
+
+input Location_areasListRelationFilter {
+  every: location_areasWhereInput
+  some: location_areasWhereInput
+  none: location_areasWhereInput
+}
+
+input location_areasWhereInput {
+  AND: [location_areasWhereInput!]
+  OR: [location_areasWhereInput!]
+  NOT: [location_areasWhereInput!]
+  id: IntFilter
+  location_id: IntFilter
+  game_index: IntFilter
+  identifier: StringNullableFilter
+  locations: LocationsRelationFilter
+  encounters: EncountersListRelationFilter
+  location_area_encounter_rates: Location_area_encounter_ratesListRelationFilter
+  location_area_prose: Location_area_proseListRelationFilter
+}
+
+input EncountersListRelationFilter {
+  every: encountersWhereInput
+  some: encountersWhereInput
+  none: encountersWhereInput
+}
+
+input encountersWhereInput {
+  AND: [encountersWhereInput!]
+  OR: [encountersWhereInput!]
+  NOT: [encountersWhereInput!]
+  id: IntFilter
+  version_id: IntFilter
+  location_area_id: IntFilter
+  encounter_slot_id: IntFilter
+  pokemon_id: IntFilter
+  min_level: IntFilter
+  max_level: IntFilter
+  pokemon: PokemonRelationFilter
+  encounter_slots: Encounter_slotsRelationFilter
+  location_areas: Location_areasRelationFilter
+  versions: VersionsRelationFilter
+  encounter_condition_value_map: Encounter_condition_value_mapListRelationFilter
+}
+
+input Encounter_slotsRelationFilter {
+  is: encounter_slotsWhereInput
+  isNot: encounter_slotsWhereInput
+}
+
+input encounter_slotsWhereInput {
+  AND: [encounter_slotsWhereInput!]
+  OR: [encounter_slotsWhereInput!]
+  NOT: [encounter_slotsWhereInput!]
+  id: IntFilter
+  version_group_id: IntFilter
+  encounter_method_id: IntFilter
+  slot: IntNullableFilter
+  rarity: IntNullableFilter
+  encounter_methods: Encounter_methodsRelationFilter
+  version_groups: Version_groupsRelationFilter
+  encounters: EncountersListRelationFilter
+}
+
+input Encounter_methodsRelationFilter {
+  is: encounter_methodsWhereInput
+  isNot: encounter_methodsWhereInput
+}
+
+input encounter_methodsWhereInput {
+  AND: [encounter_methodsWhereInput!]
+  OR: [encounter_methodsWhereInput!]
+  NOT: [encounter_methodsWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  encounter_method_prose: Encounter_method_proseListRelationFilter
+  encounter_slots: Encounter_slotsListRelationFilter
+  location_area_encounter_rates: Location_area_encounter_ratesListRelationFilter
+}
+
+input Encounter_method_proseListRelationFilter {
+  every: encounter_method_proseWhereInput
+  some: encounter_method_proseWhereInput
+  none: encounter_method_proseWhereInput
+}
+
+input encounter_method_proseWhereInput {
+  AND: [encounter_method_proseWhereInput!]
+  OR: [encounter_method_proseWhereInput!]
+  NOT: [encounter_method_proseWhereInput!]
+  encounter_method_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  encounter_methods: Encounter_methodsRelationFilter
+}
+
+input Encounter_slotsListRelationFilter {
+  every: encounter_slotsWhereInput
+  some: encounter_slotsWhereInput
+  none: encounter_slotsWhereInput
+}
+
+input Location_area_encounter_ratesListRelationFilter {
+  every: location_area_encounter_ratesWhereInput
+  some: location_area_encounter_ratesWhereInput
+  none: location_area_encounter_ratesWhereInput
+}
+
+input location_area_encounter_ratesWhereInput {
+  AND: [location_area_encounter_ratesWhereInput!]
+  OR: [location_area_encounter_ratesWhereInput!]
+  NOT: [location_area_encounter_ratesWhereInput!]
+  location_area_id: IntFilter
+  encounter_method_id: IntFilter
+  version_id: IntFilter
+  rate: IntNullableFilter
+  versions: VersionsRelationFilter
+  encounter_methods: Encounter_methodsRelationFilter
+  location_areas: Location_areasRelationFilter
+}
+
+input VersionsRelationFilter {
+  is: versionsWhereInput
+  isNot: versionsWhereInput
+}
+
+input versionsWhereInput {
+  AND: [versionsWhereInput!]
+  OR: [versionsWhereInput!]
+  NOT: [versionsWhereInput!]
+  id: IntFilter
+  version_group_id: IntFilter
+  identifier: StringFilter
+  version_groups: Version_groupsRelationFilter
+  encounters: EncountersListRelationFilter
+  location_area_encounter_rates: Location_area_encounter_ratesListRelationFilter
+  pokemon_items: Pokemon_itemsListRelationFilter
+  pokemon_species_flavor_text: Pokemon_species_flavor_textListRelationFilter
+  version_names: Version_namesListRelationFilter
+}
+
+input Pokemon_itemsListRelationFilter {
+  every: pokemon_itemsWhereInput
+  some: pokemon_itemsWhereInput
+  none: pokemon_itemsWhereInput
+}
+
+input pokemon_itemsWhereInput {
+  AND: [pokemon_itemsWhereInput!]
+  OR: [pokemon_itemsWhereInput!]
+  NOT: [pokemon_itemsWhereInput!]
+  pokemon_id: IntFilter
+  version_id: IntFilter
+  item_id: IntFilter
+  rarity: IntFilter
+  items: ItemsRelationFilter
+  versions: VersionsRelationFilter
+  pokemon: PokemonRelationFilter
+}
+
+input Pokemon_species_flavor_textListRelationFilter {
+  every: pokemon_species_flavor_textWhereInput
+  some: pokemon_species_flavor_textWhereInput
+  none: pokemon_species_flavor_textWhereInput
+}
+
+input pokemon_species_flavor_textWhereInput {
+  AND: [pokemon_species_flavor_textWhereInput!]
+  OR: [pokemon_species_flavor_textWhereInput!]
+  NOT: [pokemon_species_flavor_textWhereInput!]
+  species_id: IntFilter
+  version_id: IntFilter
+  language_id: IntFilter
+  flavor_text: StringFilter
+  languages: LanguagesRelationFilter
+  versions: VersionsRelationFilter
+  pokemon_species: Pokemon_speciesRelationFilter
+}
+
+input Version_namesListRelationFilter {
+  every: version_namesWhereInput
+  some: version_namesWhereInput
+  none: version_namesWhereInput
+}
+
+input version_namesWhereInput {
+  AND: [version_namesWhereInput!]
+  OR: [version_namesWhereInput!]
+  NOT: [version_namesWhereInput!]
+  version_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  versions: VersionsRelationFilter
+}
+
+input Location_areasRelationFilter {
+  is: location_areasWhereInput
+  isNot: location_areasWhereInput
+}
+
+input Encounter_condition_value_mapListRelationFilter {
+  every: encounter_condition_value_mapWhereInput
+  some: encounter_condition_value_mapWhereInput
+  none: encounter_condition_value_mapWhereInput
+}
+
+input encounter_condition_value_mapWhereInput {
+  AND: [encounter_condition_value_mapWhereInput!]
+  OR: [encounter_condition_value_mapWhereInput!]
+  NOT: [encounter_condition_value_mapWhereInput!]
+  encounter_id: IntFilter
+  encounter_condition_value_id: IntFilter
+  encounter_condition_values: Encounter_condition_valuesRelationFilter
+  encounters: EncountersRelationFilter
+}
+
+input Encounter_condition_valuesRelationFilter {
+  is: encounter_condition_valuesWhereInput
+  isNot: encounter_condition_valuesWhereInput
+}
+
+input encounter_condition_valuesWhereInput {
+  AND: [encounter_condition_valuesWhereInput!]
+  OR: [encounter_condition_valuesWhereInput!]
+  NOT: [encounter_condition_valuesWhereInput!]
+  id: IntFilter
+  encounter_condition_id: IntFilter
+  identifier: StringFilter
+  is_default: BoolFilter
+  encounter_conditions: Encounter_conditionsRelationFilter
+  encounter_condition_value_map: Encounter_condition_value_mapListRelationFilter
+  encounter_condition_value_prose: Encounter_condition_value_proseListRelationFilter
+}
+
+input Encounter_conditionsRelationFilter {
+  is: encounter_conditionsWhereInput
+  isNot: encounter_conditionsWhereInput
+}
+
+input encounter_conditionsWhereInput {
+  AND: [encounter_conditionsWhereInput!]
+  OR: [encounter_conditionsWhereInput!]
+  NOT: [encounter_conditionsWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  encounter_condition_prose: Encounter_condition_proseListRelationFilter
+  encounter_condition_values: Encounter_condition_valuesListRelationFilter
+}
+
+input Encounter_condition_proseListRelationFilter {
+  every: encounter_condition_proseWhereInput
+  some: encounter_condition_proseWhereInput
+  none: encounter_condition_proseWhereInput
+}
+
+input encounter_condition_proseWhereInput {
+  AND: [encounter_condition_proseWhereInput!]
+  OR: [encounter_condition_proseWhereInput!]
+  NOT: [encounter_condition_proseWhereInput!]
+  encounter_condition_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  encounter_conditions: Encounter_conditionsRelationFilter
+}
+
+input Encounter_condition_valuesListRelationFilter {
+  every: encounter_condition_valuesWhereInput
+  some: encounter_condition_valuesWhereInput
+  none: encounter_condition_valuesWhereInput
+}
+
+input Encounter_condition_value_proseListRelationFilter {
+  every: encounter_condition_value_proseWhereInput
+  some: encounter_condition_value_proseWhereInput
+  none: encounter_condition_value_proseWhereInput
+}
+
+input encounter_condition_value_proseWhereInput {
+  AND: [encounter_condition_value_proseWhereInput!]
+  OR: [encounter_condition_value_proseWhereInput!]
+  NOT: [encounter_condition_value_proseWhereInput!]
+  encounter_condition_value_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  encounter_condition_values: Encounter_condition_valuesRelationFilter
+}
+
+input EncountersRelationFilter {
+  is: encountersWhereInput
+  isNot: encountersWhereInput
+}
+
+input Location_area_proseListRelationFilter {
+  every: location_area_proseWhereInput
+  some: location_area_proseWhereInput
+  none: location_area_proseWhereInput
+}
+
+input location_area_proseWhereInput {
+  AND: [location_area_proseWhereInput!]
+  OR: [location_area_proseWhereInput!]
+  NOT: [location_area_proseWhereInput!]
+  location_area_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  location_areas: Location_areasRelationFilter
+}
+
+input Location_game_indicesListRelationFilter {
+  every: location_game_indicesWhereInput
+  some: location_game_indicesWhereInput
+  none: location_game_indicesWhereInput
+}
+
+input location_game_indicesWhereInput {
+  AND: [location_game_indicesWhereInput!]
+  OR: [location_game_indicesWhereInput!]
+  NOT: [location_game_indicesWhereInput!]
+  location_id: IntFilter
+  generation_id: IntFilter
+  game_index: IntFilter
+  generations: GenerationsRelationFilter
+  locations: LocationsRelationFilter
+}
+
+input Location_namesListRelationFilter {
+  every: location_namesWhereInput
+  some: location_namesWhereInput
+  none: location_namesWhereInput
+}
+
+input location_namesWhereInput {
+  AND: [location_namesWhereInput!]
+  OR: [location_namesWhereInput!]
+  NOT: [location_namesWhereInput!]
+  location_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  locations: LocationsRelationFilter
+}
+
+input Evolution_triggersRelationFilter {
+  is: evolution_triggersWhereInput
+  isNot: evolution_triggersWhereInput
+}
+
+input evolution_triggersWhereInput {
+  AND: [evolution_triggersWhereInput!]
+  OR: [evolution_triggersWhereInput!]
+  NOT: [evolution_triggersWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  evolution_trigger_prose: Evolution_trigger_proseListRelationFilter
+  pokemon_evolution: Pokemon_evolutionListRelationFilter
+}
+
+input Evolution_trigger_proseListRelationFilter {
+  every: evolution_trigger_proseWhereInput
+  some: evolution_trigger_proseWhereInput
+  none: evolution_trigger_proseWhereInput
+}
+
+input evolution_trigger_proseWhereInput {
+  AND: [evolution_trigger_proseWhereInput!]
+  OR: [evolution_trigger_proseWhereInput!]
+  NOT: [evolution_trigger_proseWhereInput!]
+  evolution_trigger_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  evolution_triggers: Evolution_triggersRelationFilter
+}
+
+input PokemonListRelationFilter {
+  every: pokemonWhereInput
+  some: pokemonWhereInput
+  none: pokemonWhereInput
+}
+
+input Pokemon_dex_numbersListRelationFilter {
+  every: pokemon_dex_numbersWhereInput
+  some: pokemon_dex_numbersWhereInput
+  none: pokemon_dex_numbersWhereInput
+}
+
+input pokemon_dex_numbersWhereInput {
+  AND: [pokemon_dex_numbersWhereInput!]
+  OR: [pokemon_dex_numbersWhereInput!]
+  NOT: [pokemon_dex_numbersWhereInput!]
+  species_id: IntFilter
+  pokedex_id: IntFilter
+  pokedex_number: IntFilter
+  pokedexes: PokedexesRelationFilter
+  pokemon_species: Pokemon_speciesRelationFilter
+}
+
+input Pokemon_egg_groupsListRelationFilter {
+  every: pokemon_egg_groupsWhereInput
+  some: pokemon_egg_groupsWhereInput
+  none: pokemon_egg_groupsWhereInput
+}
+
+input pokemon_egg_groupsWhereInput {
+  AND: [pokemon_egg_groupsWhereInput!]
+  OR: [pokemon_egg_groupsWhereInput!]
+  NOT: [pokemon_egg_groupsWhereInput!]
+  species_id: IntFilter
+  egg_group_id: IntFilter
+  egg_groups: Egg_groupsRelationFilter
+  pokemon_species: Pokemon_speciesRelationFilter
+}
+
+input Egg_groupsRelationFilter {
+  is: egg_groupsWhereInput
+  isNot: egg_groupsWhereInput
+}
+
+input egg_groupsWhereInput {
+  AND: [egg_groupsWhereInput!]
+  OR: [egg_groupsWhereInput!]
+  NOT: [egg_groupsWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  egg_group_prose: Egg_group_proseListRelationFilter
+  pokemon_egg_groups: Pokemon_egg_groupsListRelationFilter
+}
+
+input Egg_group_proseListRelationFilter {
+  every: egg_group_proseWhereInput
+  some: egg_group_proseWhereInput
+  none: egg_group_proseWhereInput
+}
+
+input egg_group_proseWhereInput {
+  AND: [egg_group_proseWhereInput!]
+  OR: [egg_group_proseWhereInput!]
+  NOT: [egg_group_proseWhereInput!]
+  egg_group_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  egg_groups: Egg_groupsRelationFilter
+}
+
+input Pokemon_species_flavor_summariesListRelationFilter {
+  every: pokemon_species_flavor_summariesWhereInput
+  some: pokemon_species_flavor_summariesWhereInput
+  none: pokemon_species_flavor_summariesWhereInput
+}
+
+input pokemon_species_flavor_summariesWhereInput {
+  AND: [pokemon_species_flavor_summariesWhereInput!]
+  OR: [pokemon_species_flavor_summariesWhereInput!]
+  NOT: [pokemon_species_flavor_summariesWhereInput!]
+  pokemon_species_id: IntFilter
+  local_language_id: IntFilter
+  flavor_summary: StringNullableFilter
+  languages: LanguagesRelationFilter
+  pokemon_species: Pokemon_speciesRelationFilter
+}
+
+input Pokemon_species_namesListRelationFilter {
+  every: pokemon_species_namesWhereInput
+  some: pokemon_species_namesWhereInput
+  none: pokemon_species_namesWhereInput
+}
+
+input pokemon_species_namesWhereInput {
+  AND: [pokemon_species_namesWhereInput!]
+  OR: [pokemon_species_namesWhereInput!]
+  NOT: [pokemon_species_namesWhereInput!]
+  pokemon_species_id: IntFilter
+  local_language_id: IntFilter
+  name: StringNullableFilter
+  genus: StringNullableFilter
+  languages: LanguagesRelationFilter
+  pokemon_species: Pokemon_speciesRelationFilter
+}
+
+input Pokemon_species_proseListRelationFilter {
+  every: pokemon_species_proseWhereInput
+  some: pokemon_species_proseWhereInput
+  none: pokemon_species_proseWhereInput
+}
+
+input pokemon_species_proseWhereInput {
+  AND: [pokemon_species_proseWhereInput!]
+  OR: [pokemon_species_proseWhereInput!]
+  NOT: [pokemon_species_proseWhereInput!]
+  pokemon_species_id: IntFilter
+  local_language_id: IntFilter
+  form_description: StringNullableFilter
+  languages: LanguagesRelationFilter
+  pokemon_species: Pokemon_speciesRelationFilter
+}
+
+input Pokemon_formsListRelationFilter {
+  every: pokemon_formsWhereInput
+  some: pokemon_formsWhereInput
+  none: pokemon_formsWhereInput
+}
+
+input Pokemon_game_indicesListRelationFilter {
+  every: pokemon_game_indicesWhereInput
+  some: pokemon_game_indicesWhereInput
+  none: pokemon_game_indicesWhereInput
+}
+
+input pokemon_game_indicesWhereInput {
+  AND: [pokemon_game_indicesWhereInput!]
+  OR: [pokemon_game_indicesWhereInput!]
+  NOT: [pokemon_game_indicesWhereInput!]
+  pokemon_id: IntFilter
+  generation_id: IntFilter
+  game_index: IntFilter
+  generations: GenerationsRelationFilter
+  pokemon: PokemonRelationFilter
+}
+
+input Generation_namesListRelationFilter {
+  every: generation_namesWhereInput
+  some: generation_namesWhereInput
+  none: generation_namesWhereInput
+}
+
+input generation_namesWhereInput {
+  AND: [generation_namesWhereInput!]
+  OR: [generation_namesWhereInput!]
+  NOT: [generation_namesWhereInput!]
+  generation_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  generations: GenerationsRelationFilter
+}
+
+input Version_groupsListRelationFilter {
+  every: version_groupsWhereInput
+  some: version_groupsWhereInput
+  none: version_groupsWhereInput
+}
+
+input LocationsListRelationFilter {
+  every: locationsWhereInput
+  some: locationsWhereInput
+  none: locationsWhereInput
+}
+
+input PokedexesListRelationFilter {
+  every: pokedexesWhereInput
+  some: pokedexesWhereInput
+  none: pokedexesWhereInput
+}
+
+input Region_namesListRelationFilter {
+  every: region_namesWhereInput
+  some: region_namesWhereInput
+  none: region_namesWhereInput
+}
+
+input region_namesWhereInput {
+  AND: [region_namesWhereInput!]
+  OR: [region_namesWhereInput!]
+  NOT: [region_namesWhereInput!]
+  region_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  regions: RegionsRelationFilter
+}
+
+input Version_group_regionsListRelationFilter {
+  every: version_group_regionsWhereInput
+  some: version_group_regionsWhereInput
+  none: version_group_regionsWhereInput
+}
+
+input version_group_regionsWhereInput {
+  AND: [version_group_regionsWhereInput!]
+  OR: [version_group_regionsWhereInput!]
+  NOT: [version_group_regionsWhereInput!]
+  version_group_id: IntFilter
+  region_id: IntFilter
+  regions: RegionsRelationFilter
+  version_groups: Version_groupsRelationFilter
+}
+
+input Pokedex_proseListRelationFilter {
+  every: pokedex_proseWhereInput
+  some: pokedex_proseWhereInput
+  none: pokedex_proseWhereInput
+}
+
+input pokedex_proseWhereInput {
+  AND: [pokedex_proseWhereInput!]
+  OR: [pokedex_proseWhereInput!]
+  NOT: [pokedex_proseWhereInput!]
+  pokedex_id: IntFilter
+  local_language_id: IntFilter
+  name: StringNullableFilter
+  description: StringNullableFilter
+  languages: LanguagesRelationFilter
+  pokedexes: PokedexesRelationFilter
+}
+
+input Move_flavor_textListRelationFilter {
+  every: move_flavor_textWhereInput
+  some: move_flavor_textWhereInput
+  none: move_flavor_textWhereInput
+}
+
+input move_flavor_textWhereInput {
+  AND: [move_flavor_textWhereInput!]
+  OR: [move_flavor_textWhereInput!]
+  NOT: [move_flavor_textWhereInput!]
+  move_id: IntFilter
+  version_group_id: IntFilter
+  language_id: IntFilter
+  flavor_text: StringFilter
+  languages: LanguagesRelationFilter
+  version_groups: Version_groupsRelationFilter
+  moves: MovesRelationFilter
+}
+
+input VersionsListRelationFilter {
+  every: versionsWhereInput
+  some: versionsWhereInput
+  none: versionsWhereInput
+}
+
+input Contest_effect_proseListRelationFilter {
+  every: contest_effect_proseWhereInput
+  some: contest_effect_proseWhereInput
+  none: contest_effect_proseWhereInput
+}
+
+input contest_effect_proseWhereInput {
+  AND: [contest_effect_proseWhereInput!]
+  OR: [contest_effect_proseWhereInput!]
+  NOT: [contest_effect_proseWhereInput!]
+  contest_effect_id: IntFilter
+  local_language_id: IntFilter
+  flavor_text: StringNullableFilter
+  effect: StringNullableFilter
+  languages: LanguagesRelationFilter
+  contest_effects: Contest_effectsRelationFilter
+}
+
+input Contest_effectsRelationFilter {
+  is: contest_effectsWhereInput
+  isNot: contest_effectsWhereInput
+}
+
+input contest_effectsWhereInput {
+  AND: [contest_effectsWhereInput!]
+  OR: [contest_effectsWhereInput!]
+  NOT: [contest_effectsWhereInput!]
+  id: IntFilter
+  contest_effect_prose: Contest_effect_proseListRelationFilter
+  moves: MovesListRelationFilter
+}
+
+input Language_namesListRelationFilter {
+  every: language_namesWhereInput
+  some: language_namesWhereInput
+  none: language_namesWhereInput
+}
+
+input language_namesWhereInput {
+  AND: [language_namesWhereInput!]
+  OR: [language_namesWhereInput!]
+  NOT: [language_namesWhereInput!]
+  language_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages_language_names_local_language_idTolanguages: LanguagesRelationFilter
+  languages_language_names_language_idTolanguages: LanguagesRelationFilter
+}
+
+input Move_flag_proseListRelationFilter {
+  every: move_flag_proseWhereInput
+  some: move_flag_proseWhereInput
+  none: move_flag_proseWhereInput
+}
+
+input move_flag_proseWhereInput {
+  AND: [move_flag_proseWhereInput!]
+  OR: [move_flag_proseWhereInput!]
+  NOT: [move_flag_proseWhereInput!]
+  move_flag_id: IntFilter
+  local_language_id: IntFilter
+  name: StringNullableFilter
+  description: StringNullableFilter
+  languages: LanguagesRelationFilter
+  move_flags: Move_flagsRelationFilter
+}
+
+input Move_flagsRelationFilter {
+  is: move_flagsWhereInput
+  isNot: move_flagsWhereInput
+}
+
+input move_flagsWhereInput {
+  AND: [move_flagsWhereInput!]
+  OR: [move_flagsWhereInput!]
+  NOT: [move_flagsWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  move_flag_map: Move_flag_mapListRelationFilter
+  move_flag_prose: Move_flag_proseListRelationFilter
+}
+
+input Move_flag_mapListRelationFilter {
+  every: move_flag_mapWhereInput
+  some: move_flag_mapWhereInput
+  none: move_flag_mapWhereInput
+}
+
+input move_flag_mapWhereInput {
+  AND: [move_flag_mapWhereInput!]
+  OR: [move_flag_mapWhereInput!]
+  NOT: [move_flag_mapWhereInput!]
+  move_id: IntFilter
+  move_flag_id: IntFilter
+  move_flags: Move_flagsRelationFilter
+  moves: MovesRelationFilter
+}
+
+input Move_flavor_summariesListRelationFilter {
+  every: move_flavor_summariesWhereInput
+  some: move_flavor_summariesWhereInput
+  none: move_flavor_summariesWhereInput
+}
+
+input move_flavor_summariesWhereInput {
+  AND: [move_flavor_summariesWhereInput!]
+  OR: [move_flavor_summariesWhereInput!]
+  NOT: [move_flavor_summariesWhereInput!]
+  move_id: IntFilter
+  local_language_id: IntFilter
+  flavor_summary: StringNullableFilter
+  languages: LanguagesRelationFilter
+  moves: MovesRelationFilter
+}
+
+input Move_meta_ailment_namesListRelationFilter {
+  every: move_meta_ailment_namesWhereInput
+  some: move_meta_ailment_namesWhereInput
+  none: move_meta_ailment_namesWhereInput
+}
+
+input move_meta_ailment_namesWhereInput {
+  AND: [move_meta_ailment_namesWhereInput!]
+  OR: [move_meta_ailment_namesWhereInput!]
+  NOT: [move_meta_ailment_namesWhereInput!]
+  move_meta_ailment_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  move_meta_ailments: Move_meta_ailmentsRelationFilter
+}
+
+input Move_meta_ailmentsRelationFilter {
+  is: move_meta_ailmentsWhereInput
+  isNot: move_meta_ailmentsWhereInput
+}
+
+input move_meta_ailmentsWhereInput {
+  AND: [move_meta_ailmentsWhereInput!]
+  OR: [move_meta_ailmentsWhereInput!]
+  NOT: [move_meta_ailmentsWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  move_meta: Move_metaListRelationFilter
+  move_meta_ailment_names: Move_meta_ailment_namesListRelationFilter
+}
+
+input Move_metaListRelationFilter {
+  every: move_metaWhereInput
+  some: move_metaWhereInput
+  none: move_metaWhereInput
+}
+
+input move_metaWhereInput {
+  AND: [move_metaWhereInput!]
+  OR: [move_metaWhereInput!]
+  NOT: [move_metaWhereInput!]
+  move_id: IntFilter
+  meta_category_id: IntFilter
+  meta_ailment_id: IntFilter
+  min_hits: IntNullableFilter
+  max_hits: IntNullableFilter
+  min_turns: IntNullableFilter
+  max_turns: IntNullableFilter
+  recoil: IntFilter
+  healing: IntFilter
+  crit_rate: IntFilter
+  ailment_chance: IntFilter
+  flinch_chance: IntFilter
+  stat_chance: IntFilter
+  move_meta_ailments: Move_meta_ailmentsRelationFilter
+  move_meta_categories: Move_meta_categoriesRelationFilter
+  moves: MovesRelationFilter
+}
+
+input Move_meta_categoriesRelationFilter {
+  is: move_meta_categoriesWhereInput
+  isNot: move_meta_categoriesWhereInput
+}
+
+input move_meta_categoriesWhereInput {
+  AND: [move_meta_categoriesWhereInput!]
+  OR: [move_meta_categoriesWhereInput!]
+  NOT: [move_meta_categoriesWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  move_meta: Move_metaListRelationFilter
+  move_meta_category_prose: Move_meta_category_proseListRelationFilter
+}
+
+input Move_meta_category_proseListRelationFilter {
+  every: move_meta_category_proseWhereInput
+  some: move_meta_category_proseWhereInput
+  none: move_meta_category_proseWhereInput
+}
+
+input move_meta_category_proseWhereInput {
+  AND: [move_meta_category_proseWhereInput!]
+  OR: [move_meta_category_proseWhereInput!]
+  NOT: [move_meta_category_proseWhereInput!]
+  move_meta_category_id: IntFilter
+  local_language_id: IntFilter
+  description: StringFilter
+  languages: LanguagesRelationFilter
+  move_meta_categories: Move_meta_categoriesRelationFilter
+}
+
+input Move_namesListRelationFilter {
+  every: move_namesWhereInput
+  some: move_namesWhereInput
+  none: move_namesWhereInput
+}
+
+input move_namesWhereInput {
+  AND: [move_namesWhereInput!]
+  OR: [move_namesWhereInput!]
+  NOT: [move_namesWhereInput!]
+  move_id: IntFilter
+  local_language_id: IntFilter
+  name: StringFilter
+  languages: LanguagesRelationFilter
+  moves: MovesRelationFilter
+}
+
+input Move_target_proseListRelationFilter {
+  every: move_target_proseWhereInput
+  some: move_target_proseWhereInput
+  none: move_target_proseWhereInput
+}
+
+input move_target_proseWhereInput {
+  AND: [move_target_proseWhereInput!]
+  OR: [move_target_proseWhereInput!]
+  NOT: [move_target_proseWhereInput!]
+  move_target_id: IntFilter
+  local_language_id: IntFilter
+  name: StringNullableFilter
+  description: StringNullableFilter
+  languages: LanguagesRelationFilter
+  move_targets: Move_targetsRelationFilter
+}
+
+input Move_targetsRelationFilter {
+  is: move_targetsWhereInput
+  isNot: move_targetsWhereInput
+}
+
+input move_targetsWhereInput {
+  AND: [move_targetsWhereInput!]
+  OR: [move_targetsWhereInput!]
+  NOT: [move_targetsWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  move_target_prose: Move_target_proseListRelationFilter
+  moves: MovesListRelationFilter
+}
+
+input Pokemon_move_method_proseListRelationFilter {
+  every: pokemon_move_method_proseWhereInput
+  some: pokemon_move_method_proseWhereInput
+  none: pokemon_move_method_proseWhereInput
+}
+
+input pokemon_move_method_proseWhereInput {
+  AND: [pokemon_move_method_proseWhereInput!]
+  OR: [pokemon_move_method_proseWhereInput!]
+  NOT: [pokemon_move_method_proseWhereInput!]
+  pokemon_move_method_id: IntFilter
+  local_language_id: IntFilter
+  name: StringNullableFilter
+  description: StringNullableFilter
+  languages: LanguagesRelationFilter
+  pokemon_move_methods: Pokemon_move_methodsRelationFilter
+}
+
+input Pokemon_move_methodsRelationFilter {
+  is: pokemon_move_methodsWhereInput
+  isNot: pokemon_move_methodsWhereInput
+}
+
+input pokemon_move_methodsWhereInput {
+  AND: [pokemon_move_methodsWhereInput!]
+  OR: [pokemon_move_methodsWhereInput!]
+  NOT: [pokemon_move_methodsWhereInput!]
+  id: IntFilter
+  identifier: StringFilter
+  pokemon_move_method_prose: Pokemon_move_method_proseListRelationFilter
+}
+
+input Contest_combosListRelationFilter {
+  every: contest_combosWhereInput
+  some: contest_combosWhereInput
+  none: contest_combosWhereInput
+}
+
+input contest_combosWhereInput {
+  AND: [contest_combosWhereInput!]
+  OR: [contest_combosWhereInput!]
+  NOT: [contest_combosWhereInput!]
+  first_move_id: IntFilter
+  second_move_id: IntFilter
+  moves_contest_combos_second_move_idTomoves: MovesRelationFilter
+  moves_contest_combos_first_move_idTomoves: MovesRelationFilter
+}
+
+input Move_metaRelationFilter {
+  is: move_metaWhereInput
+  isNot: move_metaWhereInput
+}
+
+input Super_contest_combosListRelationFilter {
+  every: super_contest_combosWhereInput
+  some: super_contest_combosWhereInput
+  none: super_contest_combosWhereInput
+}
+
+input super_contest_combosWhereInput {
+  AND: [super_contest_combosWhereInput!]
+  OR: [super_contest_combosWhereInput!]
+  NOT: [super_contest_combosWhereInput!]
+  first_move_id: IntFilter
+  second_move_id: IntFilter
+  moves_movesTosuper_contest_combos_second_move_id: MovesRelationFilter
+  moves_movesTosuper_contest_combos_first_move_id: MovesRelationFilter
+}
+
+input movesOrderByWithRelationInput {
+  id: SortOrder
+  identifier: SortOrder
+  generation_id: SortOrder
+  type_id: SortOrder
+  target_id: SortOrder
+  damage_class_id: SortOrder
+  effect_id: SortOrder
+  effect_chance: SortOrder
+  contest_type_id: SortOrder
+  contest_effect_id: SortOrder
+  super_contest_effect_id: SortOrder
+  super_contest_effects: super_contest_effectsOrderByWithRelationInput
+  contest_effects: contest_effectsOrderByWithRelationInput
+  contest_types: contest_typesOrderByWithRelationInput
+  move_effects: move_effectsOrderByWithRelationInput
+  move_damage_classes: move_damage_classesOrderByWithRelationInput
+  move_targets: move_targetsOrderByWithRelationInput
+  types: typesOrderByWithRelationInput
+  generations: generationsOrderByWithRelationInput
+  contest_combos_contest_combos_second_move_idTomoves: contest_combosOrderByRelationAggregateInput
+  contest_combos_contest_combos_first_move_idTomoves: contest_combosOrderByRelationAggregateInput
+  machines: machinesOrderByRelationAggregateInput
+  move_changelog: move_changelogOrderByRelationAggregateInput
+  move_flag_map: move_flag_mapOrderByRelationAggregateInput
+  move_flavor_summaries: move_flavor_summariesOrderByRelationAggregateInput
+  move_flavor_text: move_flavor_textOrderByRelationAggregateInput
+  move_meta: move_metaOrderByWithRelationInput
+  move_meta_stat_changes: move_meta_stat_changesOrderByRelationAggregateInput
+  move_names: move_namesOrderByRelationAggregateInput
+  pokemon_evolution: pokemon_evolutionOrderByRelationAggregateInput
+  super_contest_combos_movesTosuper_contest_combos_second_move_id: super_contest_combosOrderByRelationAggregateInput
+  super_contest_combos_movesTosuper_contest_combos_first_move_id: super_contest_combosOrderByRelationAggregateInput
+}
+
+enum SortOrder {
+  asc
+  desc
+}
+
+input super_contest_effectsOrderByWithRelationInput {
+  id: SortOrder
+  moves: movesOrderByRelationAggregateInput
+  super_contest_effect_prose: super_contest_effect_proseOrderByRelationAggregateInput
+}
+
+input movesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input super_contest_effect_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input contest_effectsOrderByWithRelationInput {
+  id: SortOrder
+  contest_effect_prose: contest_effect_proseOrderByRelationAggregateInput
+  moves: movesOrderByRelationAggregateInput
+}
+
+input contest_effect_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input contest_typesOrderByWithRelationInput {
+  id: SortOrder
+  identifier: SortOrder
+  berry_flavors: berry_flavorsOrderByRelationAggregateInput
+  contest_type_names: contest_type_namesOrderByRelationAggregateInput
+  moves: movesOrderByRelationAggregateInput
+  natures_contest_typesTonatures_likes_flavor_id: naturesOrderByRelationAggregateInput
+  natures_contest_typesTonatures_hates_flavor_id: naturesOrderByRelationAggregateInput
+}
+
+input berry_flavorsOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input contest_type_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input naturesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input move_effectsOrderByWithRelationInput {
+  id: SortOrder
+  move_changelog: move_changelogOrderByRelationAggregateInput
+  move_effect_changelog: move_effect_changelogOrderByRelationAggregateInput
+  move_effect_prose: move_effect_proseOrderByRelationAggregateInput
+  moves: movesOrderByRelationAggregateInput
+}
+
+input move_changelogOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input move_effect_changelogOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input move_effect_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input move_damage_classesOrderByWithRelationInput {
+  id: SortOrder
+  identifier: SortOrder
+  move_damage_class_prose: move_damage_class_proseOrderByRelationAggregateInput
+  moves: movesOrderByRelationAggregateInput
+  stats: statsOrderByRelationAggregateInput
+  types: typesOrderByRelationAggregateInput
+}
+
+input move_damage_class_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input statsOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input typesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input move_targetsOrderByWithRelationInput {
+  id: SortOrder
+  identifier: SortOrder
+  move_target_prose: move_target_proseOrderByRelationAggregateInput
+  moves: movesOrderByRelationAggregateInput
+}
+
+input move_target_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input typesOrderByWithRelationInput {
+  id: SortOrder
+  identifier: SortOrder
+  generation_id: SortOrder
+  damage_class_id: SortOrder
+  move_damage_classes: move_damage_classesOrderByWithRelationInput
+  generations: generationsOrderByWithRelationInput
+  berries: berriesOrderByRelationAggregateInput
+  move_changelog: move_changelogOrderByRelationAggregateInput
+  moves: movesOrderByRelationAggregateInput
+  pokemon_types: pokemon_typesOrderByRelationAggregateInput
+  type_efficacy_type_efficacy_target_type_idTotypes: type_efficacyOrderByRelationAggregateInput
+  type_efficacy_type_efficacy_damage_type_idTotypes: type_efficacyOrderByRelationAggregateInput
+  type_names: type_namesOrderByRelationAggregateInput
+}
+
+input generationsOrderByWithRelationInput {
+  id: SortOrder
+  main_region_id: SortOrder
+  canonical_pokedex_id: SortOrder
+  identifier: SortOrder
+  pokedexes: pokedexesOrderByWithRelationInput
+  regions: regionsOrderByWithRelationInput
+  abilities: abilitiesOrderByRelationAggregateInput
+  generation_names: generation_namesOrderByRelationAggregateInput
+  item_game_indices: item_game_indicesOrderByRelationAggregateInput
+  location_game_indices: location_game_indicesOrderByRelationAggregateInput
+  moves: movesOrderByRelationAggregateInput
+  pokemon_game_indices: pokemon_game_indicesOrderByRelationAggregateInput
+  pokemon_species: pokemon_speciesOrderByRelationAggregateInput
+  types: typesOrderByRelationAggregateInput
+  version_groups: version_groupsOrderByRelationAggregateInput
+}
+
+input pokedexesOrderByWithRelationInput {
+  id: SortOrder
+  region_id: SortOrder
+  identifier: SortOrder
+  regions: regionsOrderByWithRelationInput
+  generations: generationsOrderByRelationAggregateInput
+  pokedex_prose: pokedex_proseOrderByRelationAggregateInput
+  pokemon_dex_numbers: pokemon_dex_numbersOrderByRelationAggregateInput
+  version_groups: version_groupsOrderByRelationAggregateInput
+}
+
+input regionsOrderByWithRelationInput {
+  id: SortOrder
+  identifier: SortOrder
+  generations: generationsOrderByRelationAggregateInput
+  locations: locationsOrderByRelationAggregateInput
+  pokedexes: pokedexesOrderByRelationAggregateInput
+  region_names: region_namesOrderByRelationAggregateInput
+  version_group_regions: version_group_regionsOrderByRelationAggregateInput
+}
+
+input generationsOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input locationsOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokedexesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input region_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input version_group_regionsOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokedex_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_dex_numbersOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input version_groupsOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input abilitiesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input generation_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input item_game_indicesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input location_game_indicesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_game_indicesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_speciesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input berriesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_typesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input type_efficacyOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input type_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input contest_combosOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input machinesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input move_flag_mapOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input move_flavor_summariesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input move_flavor_textOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input move_metaOrderByWithRelationInput {
+  move_id: SortOrder
+  meta_category_id: SortOrder
+  meta_ailment_id: SortOrder
+  min_hits: SortOrder
+  max_hits: SortOrder
+  min_turns: SortOrder
+  max_turns: SortOrder
+  recoil: SortOrder
+  healing: SortOrder
+  crit_rate: SortOrder
+  ailment_chance: SortOrder
+  flinch_chance: SortOrder
+  stat_chance: SortOrder
+  move_meta_ailments: move_meta_ailmentsOrderByWithRelationInput
+  move_meta_categories: move_meta_categoriesOrderByWithRelationInput
+  moves: movesOrderByWithRelationInput
+}
+
+input move_meta_ailmentsOrderByWithRelationInput {
+  id: SortOrder
+  identifier: SortOrder
+  move_meta: move_metaOrderByRelationAggregateInput
+  move_meta_ailment_names: move_meta_ailment_namesOrderByRelationAggregateInput
+}
+
+input move_metaOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input move_meta_ailment_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input move_meta_categoriesOrderByWithRelationInput {
+  id: SortOrder
+  identifier: SortOrder
+  move_meta: move_metaOrderByRelationAggregateInput
+  move_meta_category_prose: move_meta_category_proseOrderByRelationAggregateInput
+}
+
+input move_meta_category_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input move_meta_stat_changesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input move_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_evolutionOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input super_contest_combosOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input movesWhereUniqueInput {
+  id: Int
+}
+
+enum MovesScalarFieldEnum {
+  id
+  identifier
+  generation_id
+  type_id
+  target_id
+  damage_class_id
+  effect_id
+  effect_chance
+  contest_type_id
+  contest_effect_id
+  super_contest_effect_id
+}
+
+type berry_firmness_names {
+  berry_firmness_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  berry_firmness: berry_firmness!
+}
+
+type Berry_firmnessCount {
+  berries: Int!
+  berry_firmness_names: Int!
+}
+
+type berry_firmness {
+  id: ID!
+  identifier: String!
+  berries: [berries!]
+  berry_firmness_names: [berry_firmness_names!]
+  _count: Berry_firmnessCount!
+}
+
+type BerriesCount {
+  berry_flavors: Int!
+}
+
+type berries {
+  id: ID!
+  item_id: Int!
+  firmness_id: Int!
+  natural_gift_power: Int
+  natural_gift_type_id: Int
+  size: Int!
+  max_harvest: Int!
+  growth_time: Int!
+  soil_dryness: Int!
+  smoothness: Int!
+  types: types
+  berry_firmness: berry_firmness!
+  items: items!
+  berry_flavors: [berry_flavors!]
+  _count: BerriesCount!
+}
+
+type Evolution_chainsCount {
+  pokemon_species: Int!
+}
+
+type evolution_chains {
+  id: ID!
+  baby_trigger_item_id: Int
+  items: items
+  pokemon_species: [pokemon_species!]
+  _count: Evolution_chainsCount!
+}
+
+type item_flag_prose {
+  item_flag_id: Int!
+  local_language_id: Int!
+  name: String
+  description: String
+  languages: languages!
+  item_flags: item_flags!
+}
+
+type Item_flagsCount {
+  item_flag_map: Int!
+  item_flag_prose: Int!
+}
+
+type item_flags {
+  id: ID!
+  identifier: String!
+  item_flag_map: [item_flag_map!]
+  item_flag_prose: [item_flag_prose!]
+  _count: Item_flagsCount!
+}
+
+type item_flag_map {
+  item_id: Int!
+  item_flag_id: Int!
+  item_flags: item_flags!
+  items: items!
+}
+
+type item_flavor_summaries {
+  item_id: Int!
+  local_language_id: Int!
+  flavor_summary: String
+  languages: languages!
+  items: items!
+}
+
+type item_flavor_text {
+  item_id: Int!
+  version_group_id: Int!
+  language_id: Int!
+  flavor_text: String!
+  languages: languages!
+  version_groups: version_groups!
+  items: items!
+}
+
+type item_game_indices {
+  item_id: Int!
+  generation_id: Int!
+  game_index: Int!
+  generations: generations!
+  items: items!
+}
+
+type item_names {
+  item_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  items: items!
+}
+
+type item_prose {
+  item_id: Int!
+  local_language_id: Int!
+  short_effect: String
+  effect: String
+  languages: languages!
+  items: items!
+}
+
+type ItemsCount {
+  berries: Int!
+  evolution_chains: Int!
+  item_flag_map: Int!
+  item_flavor_summaries: Int!
+  item_flavor_text: Int!
+  item_game_indices: Int!
+  item_names: Int!
+  item_prose: Int!
+  machines: Int!
+  pokemon_evolution_itemsTopokemon_evolution_held_item_id: Int!
+  pokemon_evolution_itemsTopokemon_evolution_trigger_item_id: Int!
+  pokemon_items: Int!
+}
+
+type items {
+  id: ID!
+  identifier: String!
+  category_id: Int!
+  cost: Int!
+  fling_power: Int
+  fling_effect_id: Int
+  item_fling_effects: item_fling_effects
+  item_categories: item_categories!
+  berries: [berries!]
+  evolution_chains: [evolution_chains!]
+  item_flag_map: [item_flag_map!]
+  item_flavor_summaries: [item_flavor_summaries!]
+  item_flavor_text: [item_flavor_text!]
+  item_game_indices: [item_game_indices!]
+  item_names: [item_names!]
+  item_prose: [item_prose!]
+  machines: [machines!]
+  pokemon_evolution_itemsTopokemon_evolution_held_item_id: [pokemon_evolution!]
+  pokemon_evolution_itemsTopokemon_evolution_trigger_item_id: [pokemon_evolution!]
+  pokemon_items: [pokemon_items!]
+  _count: ItemsCount!
+}
+
+type pokemon_items {
+  pokemon_id: Int!
+  version_id: Int!
+  item_id: Int!
+  rarity: Int!
+  items: items!
+  versions: versions!
+  pokemon: pokemon!
+}
+
+type pokemon_species_flavor_text {
+  species_id: Int!
+  version_id: Int!
+  language_id: Int!
+  flavor_text: String!
+  languages: languages!
+  versions: versions!
+  pokemon_species: pokemon_species!
+}
+
+type version_names {
+  version_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  versions: versions!
+}
+
+type VersionsCount {
+  encounters: Int!
+  location_area_encounter_rates: Int!
+  pokemon_items: Int!
+  pokemon_species_flavor_text: Int!
+  version_names: Int!
+}
+
+type versions {
+  id: ID!
+  version_group_id: Int!
+  identifier: String!
+  version_groups: version_groups!
+  encounters: [encounters!]
+  location_area_encounter_rates: [location_area_encounter_rates!]
+  pokemon_items: [pokemon_items!]
+  pokemon_species_flavor_text: [pokemon_species_flavor_text!]
+  version_names: [version_names!]
+  _count: VersionsCount!
+}
+
+type location_area_encounter_rates {
+  location_area_id: Int!
+  encounter_method_id: Int!
+  version_id: Int!
+  rate: Int
+  versions: versions!
+  encounter_methods: encounter_methods!
+  location_areas: location_areas!
+}
+
+type Encounter_methodsCount {
+  encounter_method_prose: Int!
+  encounter_slots: Int!
+  location_area_encounter_rates: Int!
+}
+
+type encounter_methods {
+  id: ID!
+  identifier: String!
+  encounter_method_prose: [encounter_method_prose!]
+  encounter_slots: [encounter_slots!]
+  location_area_encounter_rates: [location_area_encounter_rates!]
+  _count: Encounter_methodsCount!
+}
+
+type Encounter_slotsCount {
+  encounters: Int!
+}
+
+type encounter_slots {
+  id: ID!
+  version_group_id: Int!
+  encounter_method_id: Int!
+  slot: Int
+  rarity: Int
+  encounter_methods: encounter_methods!
+  version_groups: version_groups!
+  encounters: [encounters!]
+  _count: Encounter_slotsCount!
+}
+
+type encounter_condition_prose {
+  encounter_condition_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  encounter_conditions: encounter_conditions!
+}
+
+type Encounter_conditionsCount {
+  encounter_condition_prose: Int!
+  encounter_condition_values: Int!
+}
+
+type encounter_conditions {
+  id: ID!
+  identifier: String!
+  encounter_condition_prose: [encounter_condition_prose!]
+  encounter_condition_values: [encounter_condition_values!]
+  _count: Encounter_conditionsCount!
+}
+
+type encounter_condition_value_prose {
+  encounter_condition_value_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  encounter_condition_values: encounter_condition_values!
+}
+
+type Encounter_condition_valuesCount {
+  encounter_condition_value_map: Int!
+  encounter_condition_value_prose: Int!
+}
+
+type encounter_condition_values {
+  id: ID!
+  encounter_condition_id: Int!
+  identifier: String!
+  is_default: Boolean!
+  encounter_conditions: encounter_conditions!
+  encounter_condition_value_map: [encounter_condition_value_map!]
+  encounter_condition_value_prose: [encounter_condition_value_prose!]
+  _count: Encounter_condition_valuesCount!
+}
+
+type encounter_condition_value_map {
+  encounter_id: Int!
+  encounter_condition_value_id: Int!
+  encounter_condition_values: encounter_condition_values!
+  encounters: encounters!
+}
+
+type EncountersCount {
+  encounter_condition_value_map: Int!
+}
+
+type encounters {
+  id: ID!
+  version_id: Int!
+  location_area_id: Int!
+  encounter_slot_id: Int!
+  pokemon_id: Int!
+  min_level: Int!
+  max_level: Int!
+  pokemon: pokemon!
+  encounter_slots: encounter_slots!
+  location_areas: location_areas!
+  versions: versions!
+  encounter_condition_value_map: [encounter_condition_value_map!]
+  _count: EncountersCount!
+}
+
+type pokemon_game_indices {
+  pokemon_id: Int!
+  generation_id: Int!
+  game_index: Int!
+  generations: generations!
+  pokemon: pokemon!
+}
+
+type PokemonCount {
+  encounters: Int!
+  pokemon_abilities: Int!
+  pokemon_forms: Int!
+  pokemon_game_indices: Int!
+  pokemon_items: Int!
+  pokemon_stats: Int!
+  pokemon_types: Int!
+}
+
+type pokemon {
+  id: ID!
+  height: Int!
+  weight: Int!
+  base_experience: Int!
+  order: Int!
+  is_default: Boolean!
+  pokemon_species: pokemon_species
+  encounters: [encounters!]
+  pokemon_abilities: [pokemon_abilities!]
+  pokemon_forms: [pokemon_forms!]
+  pokemon_game_indices: [pokemon_game_indices!]
+  pokemon_items: [pokemon_items!]
+  pokemon_stats: [pokemon_stats!]
+  pokemon_types(where: pokemon_typesWhereInput, orderBy: [pokemon_typesOrderByWithRelationInput!], cursor: pokemon_typesWhereUniqueInput, take: Int, skip: Int, distinct: [Pokemon_typesScalarFieldEnum!]): [pokemon_types!]
+  _count: PokemonCount!
+}
+
+input pokemon_typesOrderByWithRelationInput {
+  pokemon_id: SortOrder
+  type_id: SortOrder
+  slot: SortOrder
+  types: typesOrderByWithRelationInput
+  pokemon: pokemonOrderByWithRelationInput
+}
+
+input pokemonOrderByWithRelationInput {
+  id: SortOrder
+  species_id: SortOrder
+  height: SortOrder
+  weight: SortOrder
+  base_experience: SortOrder
+  order: SortOrder
+  is_default: SortOrder
+  pokemon_species: pokemon_speciesOrderByWithRelationInput
+  encounters: encountersOrderByRelationAggregateInput
+  pokemon_abilities: pokemon_abilitiesOrderByRelationAggregateInput
+  pokemon_forms: pokemon_formsOrderByRelationAggregateInput
+  pokemon_game_indices: pokemon_game_indicesOrderByRelationAggregateInput
+  pokemon_items: pokemon_itemsOrderByRelationAggregateInput
+  pokemon_stats: pokemon_statsOrderByRelationAggregateInput
+  pokemon_types: pokemon_typesOrderByRelationAggregateInput
+}
+
+input pokemon_speciesOrderByWithRelationInput {
+  id: SortOrder
+  identifier: SortOrder
+  generation_id: SortOrder
+  evolves_from_species_id: SortOrder
+  evolution_chain_id: SortOrder
+  color_id: SortOrder
+  shape_id: SortOrder
+  habitat_id: SortOrder
+  gender_rate: SortOrder
+  capture_rate: SortOrder
+  base_happiness: SortOrder
+  is_baby: SortOrder
+  hatch_counter: SortOrder
+  has_gender_differences: SortOrder
+  growth_rate_id: SortOrder
+  forms_switchable: SortOrder
+  growth_rates: growth_ratesOrderByWithRelationInput
+  pokemon_habitats: pokemon_habitatsOrderByWithRelationInput
+  shape: pokemon_shapesOrderByWithRelationInput
+  color: pokemon_colorsOrderByWithRelationInput
+  evolution_chains: evolution_chainsOrderByWithRelationInput
+  pokemon_species: pokemon_speciesOrderByWithRelationInput
+  generations: generationsOrderByWithRelationInput
+  pokemon: pokemonOrderByRelationAggregateInput
+  pokemon_dex_numbers: pokemon_dex_numbersOrderByRelationAggregateInput
+  pokemon_egg_groups: pokemon_egg_groupsOrderByRelationAggregateInput
+  pokemon_evolution_pokemon_evolution_trade_species_idTopokemon_species: pokemon_evolutionOrderByRelationAggregateInput
+  pokemon_evolution_pokemon_evolution_party_species_idTopokemon_species: pokemon_evolutionOrderByRelationAggregateInput
+  pokemon_evolution_pokemon_evolution_evolved_species_idTopokemon_species: pokemon_evolutionOrderByRelationAggregateInput
+  other_pokemon_species: pokemon_speciesOrderByRelationAggregateInput
+  pokemon_species_flavor_summaries: pokemon_species_flavor_summariesOrderByRelationAggregateInput
+  pokemon_species_flavor_text: pokemon_species_flavor_textOrderByRelationAggregateInput
+  pokemon_species_names: pokemon_species_namesOrderByRelationAggregateInput
+  pokemon_species_prose: pokemon_species_proseOrderByRelationAggregateInput
+}
+
+input growth_ratesOrderByWithRelationInput {
+  id: SortOrder
+  identifier: SortOrder
+  formula: SortOrder
+  experience: experienceOrderByRelationAggregateInput
+  growth_rate_prose: growth_rate_proseOrderByRelationAggregateInput
+  pokemon_species: pokemon_speciesOrderByRelationAggregateInput
+}
+
+input experienceOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input growth_rate_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_habitatsOrderByWithRelationInput {
+  id: SortOrder
+  identifier: SortOrder
+  pokemon_habitat_names: pokemon_habitat_namesOrderByRelationAggregateInput
+  pokemon_species: pokemon_speciesOrderByRelationAggregateInput
+}
+
+input pokemon_habitat_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_shapesOrderByWithRelationInput {
+  id: SortOrder
+  identifier: SortOrder
+  pokemon_shape_prose: pokemon_shape_proseOrderByRelationAggregateInput
+  pokemon_species: pokemon_speciesOrderByRelationAggregateInput
+}
+
+input pokemon_shape_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_colorsOrderByWithRelationInput {
+  id: SortOrder
+  identifier: SortOrder
+  pokemon_color_names: pokemon_color_namesOrderByRelationAggregateInput
+  pokemon_species: pokemon_speciesOrderByRelationAggregateInput
+}
+
+input pokemon_color_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input evolution_chainsOrderByWithRelationInput {
+  id: SortOrder
+  baby_trigger_item_id: SortOrder
+  items: itemsOrderByWithRelationInput
+  pokemon_species: pokemon_speciesOrderByRelationAggregateInput
+}
+
+input itemsOrderByWithRelationInput {
+  id: SortOrder
+  identifier: SortOrder
+  category_id: SortOrder
+  cost: SortOrder
+  fling_power: SortOrder
+  fling_effect_id: SortOrder
+  item_fling_effects: item_fling_effectsOrderByWithRelationInput
+  item_categories: item_categoriesOrderByWithRelationInput
+  berries: berriesOrderByRelationAggregateInput
+  evolution_chains: evolution_chainsOrderByRelationAggregateInput
+  item_flag_map: item_flag_mapOrderByRelationAggregateInput
+  item_flavor_summaries: item_flavor_summariesOrderByRelationAggregateInput
+  item_flavor_text: item_flavor_textOrderByRelationAggregateInput
+  item_game_indices: item_game_indicesOrderByRelationAggregateInput
+  item_names: item_namesOrderByRelationAggregateInput
+  item_prose: item_proseOrderByRelationAggregateInput
+  machines: machinesOrderByRelationAggregateInput
+  pokemon_evolution_itemsTopokemon_evolution_held_item_id: pokemon_evolutionOrderByRelationAggregateInput
+  pokemon_evolution_itemsTopokemon_evolution_trigger_item_id: pokemon_evolutionOrderByRelationAggregateInput
+  pokemon_items: pokemon_itemsOrderByRelationAggregateInput
+}
+
+input item_fling_effectsOrderByWithRelationInput {
+  id: SortOrder
+  item_fling_effect_prose: item_fling_effect_proseOrderByRelationAggregateInput
+  items: itemsOrderByRelationAggregateInput
+}
+
+input item_fling_effect_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input itemsOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input item_categoriesOrderByWithRelationInput {
+  id: SortOrder
+  pocket_id: SortOrder
+  identifier: SortOrder
+  item_pockets: item_pocketsOrderByWithRelationInput
+  item_category_prose: item_category_proseOrderByRelationAggregateInput
+  items: itemsOrderByRelationAggregateInput
+}
+
+input item_pocketsOrderByWithRelationInput {
+  id: SortOrder
+  identifier: SortOrder
+  item_categories: item_categoriesOrderByRelationAggregateInput
+  item_pocket_names: item_pocket_namesOrderByRelationAggregateInput
+}
+
+input item_categoriesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input item_pocket_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input item_category_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input evolution_chainsOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input item_flag_mapOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input item_flavor_summariesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input item_flavor_textOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input item_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input item_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_itemsOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemonOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_egg_groupsOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_species_flavor_summariesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_species_flavor_textOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_species_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_species_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input encountersOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_abilitiesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_formsOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_statsOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_typesWhereUniqueInput {
+  pokemon_id_slot: pokemon_typesPokemon_idSlotCompoundUniqueInput
+}
+
+input pokemon_typesPokemon_idSlotCompoundUniqueInput {
+  pokemon_id: Int!
+  slot: Int!
+}
+
+enum Pokemon_typesScalarFieldEnum {
+  pokemon_id
+  type_id
+  slot
+}
+
+type pokemon_abilities {
+  pokemon_id: Int!
+  ability_id: Int!
+  is_dream: Boolean!
+  slot: Int!
+  abilities: abilities!
+  pokemon: pokemon!
+}
+
+type AbilitiesCount {
+  ability_changelog: Int!
+  ability_flavor_text: Int!
+  ability_names: Int!
+  ability_prose: Int!
+  pokemon_abilities: Int!
+}
+
+type abilities {
+  id: ID!
+  identifier: String!
+  generation_id: Int!
+  generations: generations!
+  ability_changelog: [ability_changelog!]
+  ability_flavor_text: [ability_flavor_text!]
+  ability_names: [ability_names!]
+  ability_prose: [ability_prose!]
+  pokemon_abilities: [pokemon_abilities!]
+  _count: AbilitiesCount!
+}
+
+type generation_names {
+  generation_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  generations: generations!
+}
+
+type GenerationsCount {
+  abilities: Int!
+  generation_names: Int!
+  item_game_indices: Int!
+  location_game_indices: Int!
+  moves: Int!
+  pokemon_game_indices: Int!
+  pokemon_species: Int!
+  types: Int!
+  version_groups: Int!
+}
+
+type generations {
+  id: ID!
+  main_region_id: Int!
+  canonical_pokedex_id: Int!
+  identifier: String!
+  pokedexes: pokedexes!
+  regions: regions!
+  abilities: [abilities!]
+  generation_names: [generation_names!]
+  item_game_indices: [item_game_indices!]
+  location_game_indices: [location_game_indices!]
+  moves: [moves!]
+  pokemon_game_indices: [pokemon_game_indices!]
+  pokemon_species: [pokemon_species!]
+  types: [types!]
+  version_groups: [version_groups!]
+  _count: GenerationsCount!
+}
+
+type region_names {
+  region_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  regions: regions!
+}
+
+type version_group_regions {
+  version_group_id: Int!
+  region_id: Int!
+  regions: regions!
+  version_groups: version_groups!
+}
+
+type RegionsCount {
+  generations: Int!
+  locations: Int!
+  pokedexes: Int!
+  region_names: Int!
+  version_group_regions: Int!
+}
+
+type regions {
+  id: ID!
+  identifier: String!
+  generations: [generations!]
+  locations: [locations!]
+  pokedexes: [pokedexes!]
+  region_names: [region_names!]
+  version_group_regions: [version_group_regions!]
+  _count: RegionsCount!
+}
+
+type pokedex_prose {
+  pokedex_id: Int!
+  local_language_id: Int!
+  name: String
+  description: String
+  languages: languages!
+  pokedexes: pokedexes!
+}
+
+type pokemon_dex_numbers {
+  species_id: Int!
+  pokedex_id: Int!
+  pokedex_number: Int!
+  pokedexes: pokedexes!
+  pokemon_species: pokemon_species!
+}
+
+type PokedexesCount {
+  generations: Int!
+  pokedex_prose: Int!
+  pokemon_dex_numbers: Int!
+  version_groups: Int!
+}
+
+type pokedexes {
+  id: ID!
+  region_id: Int
+  identifier: String!
+  regions: regions
+  generations: [generations!]
+  pokedex_prose: [pokedex_prose!]
+  pokemon_dex_numbers: [pokemon_dex_numbers!]
+  version_groups: [version_groups!]
+  _count: PokedexesCount!
+}
+
+type Version_groupsCount {
+  ability_changelog: Int!
+  ability_flavor_text: Int!
+  encounter_slots: Int!
+  item_flavor_text: Int!
+  machines: Int!
+  move_changelog: Int!
+  move_effect_changelog: Int!
+  move_flavor_text: Int!
+  pokemon_forms: Int!
+  version_group_regions: Int!
+  versions: Int!
+}
+
+type version_groups {
+  id: ID!
+  generation_id: Int!
+  pokedex_id: Int!
+  pokedexes: pokedexes!
+  generations: generations!
+  ability_changelog: [ability_changelog!]
+  ability_flavor_text: [ability_flavor_text!]
+  encounter_slots: [encounter_slots!]
+  item_flavor_text: [item_flavor_text!]
+  machines: [machines!]
+  move_changelog: [move_changelog!]
+  move_effect_changelog: [move_effect_changelog!]
+  move_flavor_text: [move_flavor_text!]
+  pokemon_forms: [pokemon_forms!]
+  version_group_regions: [version_group_regions!]
+  versions: [versions!]
+  _count: Version_groupsCount!
+}
+
+type Ability_changelogCount {
+  ability_changelog_prose: Int!
+}
+
+type ability_changelog {
+  id: ID!
+  ability_id: Int!
+  changed_in_version_group_id: Int!
+  version_groups: version_groups!
+  abilities: abilities!
+  ability_changelog_prose: [ability_changelog_prose!]
+  _count: Ability_changelogCount!
+}
+
+type ability_changelog_prose {
+  ability_changelog_id: Int!
+  local_language_id: Int!
+  effect: String!
+  languages: languages!
+  ability_changelog: ability_changelog!
+}
+
+type pokemon_egg_groups {
+  species_id: Int!
+  egg_group_id: Int!
+  egg_groups: egg_groups!
+  pokemon_species: pokemon_species!
+}
+
+type Egg_groupsCount {
+  egg_group_prose: Int!
+  pokemon_egg_groups: Int!
+}
+
+type egg_groups {
+  id: ID!
+  identifier: String!
+  egg_group_prose: [egg_group_prose!]
+  pokemon_egg_groups: [pokemon_egg_groups!]
+  _count: Egg_groupsCount!
+}
+
+type egg_group_prose {
+  egg_group_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  egg_groups: egg_groups!
+}
+
+type language_names {
+  language_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages_language_names_local_language_idTolanguages: languages!
+  languages_language_names_language_idTolanguages: languages!
+}
+
+type Pokemon_colorsCount {
+  pokemon_color_names: Int!
+  pokemon_species: Int!
+}
+
+type pokemon_colors {
+  id: ID!
+  identifier: String!
+  pokemon_color_names: [pokemon_color_names!]
+  pokemon_species: [pokemon_species!]
+  _count: Pokemon_colorsCount!
+}
+
+type pokemon_color_names {
+  pokemon_color_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  pokemon_colors: pokemon_colors!
+}
+
+type Pokemon_habitatsCount {
+  pokemon_habitat_names: Int!
+  pokemon_species: Int!
+}
+
+type pokemon_habitats {
+  id: ID!
+  identifier: String!
+  pokemon_habitat_names: [pokemon_habitat_names!]
+  pokemon_species: [pokemon_species!]
+  _count: Pokemon_habitatsCount!
+}
+
+type pokemon_habitat_names {
+  pokemon_habitat_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  pokemon_habitats: pokemon_habitats!
+}
+
+type Pokemon_move_methodsCount {
+  pokemon_move_method_prose: Int!
+}
+
+type pokemon_move_methods {
+  id: ID!
+  identifier: String!
+  pokemon_move_method_prose: [pokemon_move_method_prose!]
+  _count: Pokemon_move_methodsCount!
+}
+
+type pokemon_move_method_prose {
+  pokemon_move_method_id: Int!
+  local_language_id: Int!
+  name: String
+  description: String
+  languages: languages!
+  pokemon_move_methods: pokemon_move_methods!
+}
+
+type Pokemon_shapesCount {
+  pokemon_shape_prose: Int!
+  pokemon_species: Int!
+}
+
+type pokemon_shapes {
+  id: ID!
+  identifier: String!
+  pokemon_shape_prose: [pokemon_shape_prose!]
+  pokemon_species: [pokemon_species!]
+  _count: Pokemon_shapesCount!
+}
+
+type pokemon_shape_prose {
+  pokemon_shape_id: Int!
+  local_language_id: Int!
+  name: String
+  awesome_name: String
+  languages: languages!
+  pokemon_shapes: pokemon_shapes!
+}
+
+type pokemon_species_flavor_summaries {
+  pokemon_species_id: Int!
+  local_language_id: Int!
+  flavor_summary: String
+  languages: languages!
+  pokemon_species: pokemon_species!
+}
+
+type pokemon_species_names {
+  pokemon_species_id: Int!
+  local_language_id: Int!
+  name: String
+  genus: String
+  languages: languages!
+  pokemon_species: pokemon_species!
+}
+
+type pokemon_species_prose {
+  pokemon_species_id: Int!
+  local_language_id: Int!
+  form_description: String
+  languages: languages!
+  pokemon_species: pokemon_species!
+}
+
+type LanguagesCount {
+  ability_changelog_prose: Int!
+  ability_flavor_text: Int!
+  ability_names: Int!
+  ability_prose: Int!
+  berry_firmness_names: Int!
+  contest_effect_prose: Int!
+  contest_type_names: Int!
+  egg_group_prose: Int!
+  encounter_condition_prose: Int!
+  encounter_condition_value_prose: Int!
+  encounter_method_prose: Int!
+  evolution_trigger_prose: Int!
+  generation_names: Int!
+  growth_rate_prose: Int!
+  item_category_prose: Int!
+  item_flag_prose: Int!
+  item_flavor_summaries: Int!
+  item_flavor_text: Int!
+  item_fling_effect_prose: Int!
+  item_names: Int!
+  item_pocket_names: Int!
+  item_prose: Int!
+  language_names_language_names_local_language_idTolanguages: Int!
+  language_names_language_names_language_idTolanguages: Int!
+  location_area_prose: Int!
+  location_names: Int!
+  move_battle_style_prose: Int!
+  move_damage_class_prose: Int!
+  move_effect_changelog_prose: Int!
+  move_effect_prose: Int!
+  move_flag_prose: Int!
+  move_flavor_summaries: Int!
+  move_flavor_text: Int!
+  move_meta_ailment_names: Int!
+  move_meta_category_prose: Int!
+  move_names: Int!
+  move_target_prose: Int!
+  nature_names: Int!
+  pokeathlon_stat_names: Int!
+  pokedex_prose: Int!
+  pokemon_color_names: Int!
+  pokemon_form_names: Int!
+  pokemon_habitat_names: Int!
+  pokemon_move_method_prose: Int!
+  pokemon_shape_prose: Int!
+  pokemon_species_flavor_summaries: Int!
+  pokemon_species_flavor_text: Int!
+  pokemon_species_names: Int!
+  pokemon_species_prose: Int!
+  region_names: Int!
+  stat_hint_names: Int!
+  stat_names: Int!
+  super_contest_effect_prose: Int!
+  type_names: Int!
+  version_names: Int!
+}
+
+type languages {
+  id: ID!
+  iso639: String!
+  iso3166: String!
+  identifier: String!
+  official: Boolean!
+  order: Int
+  ability_changelog_prose: [ability_changelog_prose!]
+  ability_flavor_text: [ability_flavor_text!]
+  ability_names: [ability_names!]
+  ability_prose: [ability_prose!]
+  berry_firmness_names: [berry_firmness_names!]
+  contest_effect_prose: [contest_effect_prose!]
+  contest_type_names: [contest_type_names!]
+  egg_group_prose: [egg_group_prose!]
+  encounter_condition_prose: [encounter_condition_prose!]
+  encounter_condition_value_prose: [encounter_condition_value_prose!]
+  encounter_method_prose: [encounter_method_prose!]
+  evolution_trigger_prose: [evolution_trigger_prose!]
+  generation_names: [generation_names!]
+  growth_rate_prose: [growth_rate_prose!]
+  item_category_prose: [item_category_prose!]
+  item_flag_prose: [item_flag_prose!]
+  item_flavor_summaries: [item_flavor_summaries!]
+  item_flavor_text: [item_flavor_text!]
+  item_fling_effect_prose: [item_fling_effect_prose!]
+  item_names: [item_names!]
+  item_pocket_names: [item_pocket_names!]
+  item_prose: [item_prose!]
+  language_names_language_names_local_language_idTolanguages: [language_names!]
+  language_names_language_names_language_idTolanguages: [language_names!]
+  location_area_prose: [location_area_prose!]
+  location_names: [location_names!]
+  move_battle_style_prose: [move_battle_style_prose!]
+  move_damage_class_prose: [move_damage_class_prose!]
+  move_effect_changelog_prose: [move_effect_changelog_prose!]
+  move_effect_prose: [move_effect_prose!]
+  move_flag_prose: [move_flag_prose!]
+  move_flavor_summaries: [move_flavor_summaries!]
+  move_flavor_text: [move_flavor_text!]
+  move_meta_ailment_names: [move_meta_ailment_names!]
+  move_meta_category_prose: [move_meta_category_prose!]
+  move_names: [move_names!]
+  move_target_prose: [move_target_prose!]
+  nature_names: [nature_names!]
+  pokeathlon_stat_names: [pokeathlon_stat_names!]
+  pokedex_prose: [pokedex_prose!]
+  pokemon_color_names: [pokemon_color_names!]
+  pokemon_form_names: [pokemon_form_names!]
+  pokemon_habitat_names: [pokemon_habitat_names!]
+  pokemon_move_method_prose: [pokemon_move_method_prose!]
+  pokemon_shape_prose: [pokemon_shape_prose!]
+  pokemon_species_flavor_summaries: [pokemon_species_flavor_summaries!]
+  pokemon_species_flavor_text: [pokemon_species_flavor_text!]
+  pokemon_species_names: [pokemon_species_names!]
+  pokemon_species_prose: [pokemon_species_prose!]
+  region_names: [region_names!]
+  stat_hint_names: [stat_hint_names!]
+  stat_names: [stat_names!]
+  super_contest_effect_prose: [super_contest_effect_prose!]
+  type_names: [type_names!]
+  version_names: [version_names!]
+  _count: LanguagesCount!
+}
+
+type growth_rate_prose {
+  growth_rate_id: Int!
+  local_language_id: Int!
+  name: String!
+  languages: languages!
+  growth_rates: growth_rates!
+}
+
+type Growth_ratesCount {
+  experience: Int!
+  growth_rate_prose: Int!
+  pokemon_species: Int!
+}
+
+type growth_rates {
+  id: ID!
+  identifier: String!
+  formula: String!
+  experience: [experience!]
+  growth_rate_prose: [growth_rate_prose!]
+  pokemon_species: [pokemon_species!]
+  _count: Growth_ratesCount!
+}
+
+type Pokemon_speciesCount {
+  pokemon: Int!
+  pokemon_dex_numbers: Int!
+  pokemon_egg_groups: Int!
+  pokemon_evolution_pokemon_evolution_trade_species_idTopokemon_species: Int!
+  pokemon_evolution_pokemon_evolution_party_species_idTopokemon_species: Int!
+  pokemon_evolution_pokemon_evolution_evolved_species_idTopokemon_species: Int!
+  other_pokemon_species: Int!
+  pokemon_species_flavor_summaries: Int!
+  pokemon_species_flavor_text: Int!
+  pokemon_species_names: Int!
+  pokemon_species_prose: Int!
+}
+
+type pokemon_species {
+  id: ID!
+  identifier: String!
+  generation_id: Int
+  evolves_from_species_id: Int
+  evolution_chain_id: Int
+  color_id: Int!
+  shape_id: Int!
+  habitat_id: Int
+  gender_rate: Int!
+  capture_rate: Int!
+  base_happiness: Int!
+  is_baby: Boolean!
+  hatch_counter: Int!
+  has_gender_differences: Boolean!
+  growth_rate_id: Int!
+  forms_switchable: Boolean!
+  growth_rates: growth_rates!
+  pokemon_habitats(where: pokemon_habitatsWhereInput, orderBy: [pokemon_habitatsOrderByWithRelationInput!], cursor: pokemon_habitatsWhereUniqueInput, take: Int, skip: Int, distinct: [Pokemon_habitatsScalarFieldEnum!]): pokemon_habitats
+  shape: pokemon_shapes!
+  color: pokemon_colors!
+  evolution_chains: evolution_chains
+  pokemon_species: pokemon_species
+  generations: generations
+  pokemon: [pokemon!]
+  pokemon_dex_numbers: [pokemon_dex_numbers!]
+  pokemon_egg_groups: [pokemon_egg_groups!]
+  pokemon_evolution_pokemon_evolution_trade_species_idTopokemon_species: [pokemon_evolution!]
+  pokemon_evolution_pokemon_evolution_party_species_idTopokemon_species: [pokemon_evolution!]
+  pokemon_evolution_pokemon_evolution_evolved_species_idTopokemon_species: [pokemon_evolution!]
+  other_pokemon_species: [pokemon_species!]
+  pokemon_species_flavor_summaries(where: pokemon_species_flavor_summariesWhereInput, orderBy: [pokemon_species_flavor_summariesOrderByWithRelationInput!], cursor: pokemon_species_flavor_summariesWhereUniqueInput, take: Int, skip: Int, distinct: [Pokemon_species_flavor_summariesScalarFieldEnum!]): [pokemon_species_flavor_summaries!]
+  pokemon_species_flavor_text: [pokemon_species_flavor_text!]
+  pokemon_species_names(where: pokemon_species_namesWhereInput, orderBy: [pokemon_species_namesOrderByWithRelationInput!], cursor: pokemon_species_namesWhereUniqueInput, take: Int, skip: Int, distinct: [Pokemon_species_namesScalarFieldEnum!]): [pokemon_species_names!]
+  pokemon_species_prose(where: pokemon_species_proseWhereInput, orderBy: [pokemon_species_proseOrderByWithRelationInput!], cursor: pokemon_species_proseWhereUniqueInput, take: Int, skip: Int, distinct: [Pokemon_species_proseScalarFieldEnum!]): [pokemon_species_prose!]
+  _count: Pokemon_speciesCount!
+}
+
+input pokemon_habitatsWhereUniqueInput {
+  id: Int
+}
+
+enum Pokemon_habitatsScalarFieldEnum {
+  id
+  identifier
+}
+
+input pokemon_species_flavor_summariesOrderByWithRelationInput {
+  pokemon_species_id: SortOrder
+  local_language_id: SortOrder
+  flavor_summary: SortOrder
+  languages: languagesOrderByWithRelationInput
+  pokemon_species: pokemon_speciesOrderByWithRelationInput
+}
+
+input languagesOrderByWithRelationInput {
+  id: SortOrder
+  iso639: SortOrder
+  iso3166: SortOrder
+  identifier: SortOrder
+  official: SortOrder
+  order: SortOrder
+  ability_changelog_prose: ability_changelog_proseOrderByRelationAggregateInput
+  ability_flavor_text: ability_flavor_textOrderByRelationAggregateInput
+  ability_names: ability_namesOrderByRelationAggregateInput
+  ability_prose: ability_proseOrderByRelationAggregateInput
+  berry_firmness_names: berry_firmness_namesOrderByRelationAggregateInput
+  contest_effect_prose: contest_effect_proseOrderByRelationAggregateInput
+  contest_type_names: contest_type_namesOrderByRelationAggregateInput
+  egg_group_prose: egg_group_proseOrderByRelationAggregateInput
+  encounter_condition_prose: encounter_condition_proseOrderByRelationAggregateInput
+  encounter_condition_value_prose: encounter_condition_value_proseOrderByRelationAggregateInput
+  encounter_method_prose: encounter_method_proseOrderByRelationAggregateInput
+  evolution_trigger_prose: evolution_trigger_proseOrderByRelationAggregateInput
+  generation_names: generation_namesOrderByRelationAggregateInput
+  growth_rate_prose: growth_rate_proseOrderByRelationAggregateInput
+  item_category_prose: item_category_proseOrderByRelationAggregateInput
+  item_flag_prose: item_flag_proseOrderByRelationAggregateInput
+  item_flavor_summaries: item_flavor_summariesOrderByRelationAggregateInput
+  item_flavor_text: item_flavor_textOrderByRelationAggregateInput
+  item_fling_effect_prose: item_fling_effect_proseOrderByRelationAggregateInput
+  item_names: item_namesOrderByRelationAggregateInput
+  item_pocket_names: item_pocket_namesOrderByRelationAggregateInput
+  item_prose: item_proseOrderByRelationAggregateInput
+  language_names_language_names_local_language_idTolanguages: language_namesOrderByRelationAggregateInput
+  language_names_language_names_language_idTolanguages: language_namesOrderByRelationAggregateInput
+  location_area_prose: location_area_proseOrderByRelationAggregateInput
+  location_names: location_namesOrderByRelationAggregateInput
+  move_battle_style_prose: move_battle_style_proseOrderByRelationAggregateInput
+  move_damage_class_prose: move_damage_class_proseOrderByRelationAggregateInput
+  move_effect_changelog_prose: move_effect_changelog_proseOrderByRelationAggregateInput
+  move_effect_prose: move_effect_proseOrderByRelationAggregateInput
+  move_flag_prose: move_flag_proseOrderByRelationAggregateInput
+  move_flavor_summaries: move_flavor_summariesOrderByRelationAggregateInput
+  move_flavor_text: move_flavor_textOrderByRelationAggregateInput
+  move_meta_ailment_names: move_meta_ailment_namesOrderByRelationAggregateInput
+  move_meta_category_prose: move_meta_category_proseOrderByRelationAggregateInput
+  move_names: move_namesOrderByRelationAggregateInput
+  move_target_prose: move_target_proseOrderByRelationAggregateInput
+  nature_names: nature_namesOrderByRelationAggregateInput
+  pokeathlon_stat_names: pokeathlon_stat_namesOrderByRelationAggregateInput
+  pokedex_prose: pokedex_proseOrderByRelationAggregateInput
+  pokemon_color_names: pokemon_color_namesOrderByRelationAggregateInput
+  pokemon_form_names: pokemon_form_namesOrderByRelationAggregateInput
+  pokemon_habitat_names: pokemon_habitat_namesOrderByRelationAggregateInput
+  pokemon_move_method_prose: pokemon_move_method_proseOrderByRelationAggregateInput
+  pokemon_shape_prose: pokemon_shape_proseOrderByRelationAggregateInput
+  pokemon_species_flavor_summaries: pokemon_species_flavor_summariesOrderByRelationAggregateInput
+  pokemon_species_flavor_text: pokemon_species_flavor_textOrderByRelationAggregateInput
+  pokemon_species_names: pokemon_species_namesOrderByRelationAggregateInput
+  pokemon_species_prose: pokemon_species_proseOrderByRelationAggregateInput
+  region_names: region_namesOrderByRelationAggregateInput
+  stat_hint_names: stat_hint_namesOrderByRelationAggregateInput
+  stat_names: stat_namesOrderByRelationAggregateInput
+  super_contest_effect_prose: super_contest_effect_proseOrderByRelationAggregateInput
+  type_names: type_namesOrderByRelationAggregateInput
+  version_names: version_namesOrderByRelationAggregateInput
+}
+
+input ability_changelog_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input ability_flavor_textOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input ability_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input ability_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input berry_firmness_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input egg_group_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input encounter_condition_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input encounter_condition_value_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input encounter_method_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input evolution_trigger_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input item_flag_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input language_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input location_area_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input location_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input move_battle_style_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input move_effect_changelog_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input move_flag_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input nature_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokeathlon_stat_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_form_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_move_method_proseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input stat_hint_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input stat_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input version_namesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input pokemon_species_flavor_summariesWhereUniqueInput {
+  pokemon_species_id_local_language_id: pokemon_species_flavor_summariesPokemon_species_idLocal_language_idCompoundUniqueInput
+}
+
+input pokemon_species_flavor_summariesPokemon_species_idLocal_language_idCompoundUniqueInput {
+  pokemon_species_id: Int!
+  local_language_id: Int!
+}
+
+enum Pokemon_species_flavor_summariesScalarFieldEnum {
+  pokemon_species_id
+  local_language_id
+  flavor_summary
+}
+
+input pokemon_species_namesOrderByWithRelationInput {
+  pokemon_species_id: SortOrder
+  local_language_id: SortOrder
+  name: SortOrder
+  genus: SortOrder
+  languages: languagesOrderByWithRelationInput
+  pokemon_species: pokemon_speciesOrderByWithRelationInput
+}
+
+input pokemon_species_namesWhereUniqueInput {
+  pokemon_species_id_local_language_id: pokemon_species_namesPokemon_species_idLocal_language_idCompoundUniqueInput
+}
+
+input pokemon_species_namesPokemon_species_idLocal_language_idCompoundUniqueInput {
+  pokemon_species_id: Int!
+  local_language_id: Int!
+}
+
+enum Pokemon_species_namesScalarFieldEnum {
+  pokemon_species_id
+  local_language_id
+  name
+  genus
+}
+
+input pokemon_species_proseOrderByWithRelationInput {
+  pokemon_species_id: SortOrder
+  local_language_id: SortOrder
+  form_description: SortOrder
+  languages: languagesOrderByWithRelationInput
+  pokemon_species: pokemon_speciesOrderByWithRelationInput
+}
+
+input pokemon_species_proseWhereUniqueInput {
+  pokemon_species_id_local_language_id: pokemon_species_prosePokemon_species_idLocal_language_idCompoundUniqueInput
+}
+
+input pokemon_species_prosePokemon_species_idLocal_language_idCompoundUniqueInput {
+  pokemon_species_id: Int!
+  local_language_id: Int!
+}
+
+enum Pokemon_species_proseScalarFieldEnum {
+  pokemon_species_id
+  local_language_id
+  form_description
+}
+
+type Query {
+  pokemonSpecies(where: pokemon_speciesWhereInput, orderBy: [pokemon_speciesOrderByWithRelationInput!], cursor: pokemon_speciesWhereUniqueInput, take: Int, skip: Int, distinct: [Pokemon_speciesScalarFieldEnum!]): [pokemon_species!]!
+  pokemon(where: pokemonWhereInput, orderBy: [pokemonOrderByWithRelationInput!], cursor: pokemonWhereUniqueInput, take: Int, skip: Int, distinct: [PokemonScalarFieldEnum!]): [pokemon!]!
+}
+
+input pokemon_speciesWhereUniqueInput {
+  id: Int
+}
+
+enum Pokemon_speciesScalarFieldEnum {
+  id
+  identifier
+  generation_id
+  evolves_from_species_id
+  evolution_chain_id
+  color_id
+  shape_id
+  habitat_id
+  gender_rate
+  capture_rate
+  base_happiness
+  is_baby
+  hatch_counter
+  has_gender_differences
+  growth_rate_id
+  forms_switchable
+}
+
+input pokemonWhereUniqueInput {
+  id: Int
+}
+
+enum PokemonScalarFieldEnum {
+  id
+  species_id
+  height
+  weight
+  base_experience
+  order
+  is_default
+}

@@ -1,0 +1,17 @@
+import { Field } from '@nestjs/graphql';
+import { InputType } from '@nestjs/graphql';
+import { pokemon_color_namesWhereUniqueInput } from './pokemon-color-names-where-unique.input';
+import { Type } from 'class-transformer';
+import { pokemon_color_namesUpdateWithoutLanguagesInput } from './pokemon-color-names-update-without-languages.input';
+
+@InputType()
+export class pokemon_color_namesUpdateWithWhereUniqueWithoutLanguagesInput {
+
+    @Field(() => pokemon_color_namesWhereUniqueInput, {nullable:false})
+    @Type(() => pokemon_color_namesWhereUniqueInput)
+    where!: pokemon_color_namesWhereUniqueInput;
+
+    @Field(() => pokemon_color_namesUpdateWithoutLanguagesInput, {nullable:false})
+    @Type(() => pokemon_color_namesUpdateWithoutLanguagesInput)
+    data!: pokemon_color_namesUpdateWithoutLanguagesInput;
+}

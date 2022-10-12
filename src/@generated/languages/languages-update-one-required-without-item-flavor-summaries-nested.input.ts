@@ -1,0 +1,32 @@
+import { Field } from '@nestjs/graphql';
+import { InputType } from '@nestjs/graphql';
+import { languagesCreateWithoutItem_flavor_summariesInput } from './languages-create-without-item-flavor-summaries.input';
+import { Type } from 'class-transformer';
+import { languagesCreateOrConnectWithoutItem_flavor_summariesInput } from './languages-create-or-connect-without-item-flavor-summaries.input';
+import { languagesUpsertWithoutItem_flavor_summariesInput } from './languages-upsert-without-item-flavor-summaries.input';
+import { languagesWhereUniqueInput } from './languages-where-unique.input';
+import { languagesUpdateWithoutItem_flavor_summariesInput } from './languages-update-without-item-flavor-summaries.input';
+
+@InputType()
+export class languagesUpdateOneRequiredWithoutItem_flavor_summariesNestedInput {
+
+    @Field(() => languagesCreateWithoutItem_flavor_summariesInput, {nullable:true})
+    @Type(() => languagesCreateWithoutItem_flavor_summariesInput)
+    create?: languagesCreateWithoutItem_flavor_summariesInput;
+
+    @Field(() => languagesCreateOrConnectWithoutItem_flavor_summariesInput, {nullable:true})
+    @Type(() => languagesCreateOrConnectWithoutItem_flavor_summariesInput)
+    connectOrCreate?: languagesCreateOrConnectWithoutItem_flavor_summariesInput;
+
+    @Field(() => languagesUpsertWithoutItem_flavor_summariesInput, {nullable:true})
+    @Type(() => languagesUpsertWithoutItem_flavor_summariesInput)
+    upsert?: languagesUpsertWithoutItem_flavor_summariesInput;
+
+    @Field(() => languagesWhereUniqueInput, {nullable:true})
+    @Type(() => languagesWhereUniqueInput)
+    connect?: languagesWhereUniqueInput;
+
+    @Field(() => languagesUpdateWithoutItem_flavor_summariesInput, {nullable:true})
+    @Type(() => languagesUpdateWithoutItem_flavor_summariesInput)
+    update?: languagesUpdateWithoutItem_flavor_summariesInput;
+}
